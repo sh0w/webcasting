@@ -6,6 +6,8 @@ Webcasting::Application.routes.draw do
   #resources :user
 
   match 'user/:id' => 'user#show', :as => :user
+  match 'search' => 'user#search', :as => :search
+  match 'blackboard' => 'user#black_board', :as => :black_board
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
