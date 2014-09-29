@@ -1,4 +1,7 @@
 Webcasting::Application.routes.draw do
+  resources :posts
+
+
   devise_for :users
 
   resources :students
@@ -7,7 +10,7 @@ Webcasting::Application.routes.draw do
 
   match 'user/:id' => 'user#show', :as => :user
   match 'search' => 'user#search', :as => :search
-  match 'blackboard' => 'user#black_board', :as => :black_board
+  match 'blackboard' => 'posts#index', :as => :black_board
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
