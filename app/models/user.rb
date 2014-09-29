@@ -6,11 +6,21 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :description, :city, :country, :name, :image
+  attr_accessible :description, :city, :country, :name, :image, :university_name
 
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "60x60#" }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
+#  attr_accessor :university_name
 
   has_many :posts
+
+  def university_name
+    university.name if university
+  end
+
+  def university_name(name)
+    self.university = University.find_or_create_by_name(name) unless name.blank?
+  end
+
 end
