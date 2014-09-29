@@ -1,9 +1,10 @@
 .page-header
-  %h1
-    Blackboard
+  %h1 Black board
 
-= link_to 'New Post', new_post_path, :class => 'btn btn-primary'
 #blackboard
+  .post{:class => @colors.sample}
+    = link_to 'New Post', new_post_path, :class => 'btn btn-primary'
+
   - @posts.each do |post|
     .post{:class => @colors.sample}
       %h2
@@ -11,3 +12,4 @@
       = post.content
       %p= link_to post.user.name || post.user.email, post.user
       %small= "#{time_ago_in_words(post.created_at)} ago"
+

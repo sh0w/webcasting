@@ -1,8 +1,7 @@
-%h1 Search users
-
-= form_tag("/search", method: "get") do
-  = text_field_tag :q, params[:q]
-  = submit_tag("Search")
+.page-header
+  = form_tag("/search", method: "get") do
+    = text_field_tag :q, params[:q]
+    = submit_tag("Search")
 
 %h2
   = pluralize @users.length, 'result'
