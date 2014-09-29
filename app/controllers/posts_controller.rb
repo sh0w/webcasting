@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order("created_at DESC").all
     @colors = ["lightgreen","green","red","darkred","blue","cyan","purple","orange","yellow"]
 
     respond_to do |format|
