@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @colors = ["lightgreen","green","red","darkred","blue","cyan","purple","orange","yellow"]
 
     respond_to do |format|
       format.html # index.html.erb

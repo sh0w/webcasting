@@ -15,14 +15,14 @@
 
 
 
-.navbar-inverse .navbar-inner {
+#menu .navbar-inner {
     background: #8daab4 !important;
     border: 0px;
     border-radius: 0px;
     webkit-border-radius: 0px;
 }
 
-.navbar-inverse .navbar-inner li:hover, .brand:hover {
+#menu .navbar-inner li:hover, .brand:hover {
     background: #9dcdc7 !important;
 }
 
