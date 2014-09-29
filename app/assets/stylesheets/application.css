@@ -11,3 +11,28 @@
  *= require_self
  *= require_tree .
  */
+
+
+
+
+.navbar-inverse .navbar-inner {
+    background: #8daab4 !important;
+    border: 0px;
+    border-radius: 0px;
+    webkit-border-radius: 0px;
+}
+
+.navbar-inverse .navbar-inner li:hover, .brand:hover {
+    background: #9dcdc7 !important;
+}
+
+.navbar-inverse .navbar-inner a {
+    color: white !important;
+    letter-spacing: 1px;
+    line-height: 2.5em;
+    text-transform: uppercase;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-size: 1.4em;
+    font-weight: 300;
+}
+
