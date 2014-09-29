@@ -8,8 +8,8 @@ Webcasting::Application.routes.draw do
 
   #resources :user
 
-  match 'user/:id' => 'user#show', :as => :user
-  match 'search/' => 'user#search', :as => :search
+  match 'user/:id' => 'users#show', :as => :user
+  match 'search/' => 'users#search', :as => :search
   match 'blackboard' => 'posts#index', :as => :black_board
 
   # The priority is based upon order of creation:
@@ -61,7 +61,7 @@ Webcasting::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'user#index'
+  root :to => 'users#index'
 
 
   # See how all your routes lay out with "rake routes"

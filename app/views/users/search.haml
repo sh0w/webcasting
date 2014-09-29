@@ -8,5 +8,6 @@
   = pluralize @users.length, 'result'
   found
 
-- @users.each do |u|
-  = link_to u.email, user_path(u)
+#userlist
+  - @users.each do |u|
+    = render u
