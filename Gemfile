@@ -45,3 +45,5 @@ gem "twitter-bootstrap-rails"
 gem 'haml-rails'
 
 gem 'mailboxer'
+
+gem "paperclip", "~> 3.0"

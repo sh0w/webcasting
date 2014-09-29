@@ -1,2 +1,9 @@
 %h1
-  User: #{@user.email}
+  #{@user.name}
+
+%p= "from #{@user.city}, #{@user.country}"
+
+= image_tag @user.image.url(:medium)
+
+%p= @user.description
+
