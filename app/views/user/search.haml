@@ -1,2 +1,12 @@
 %h1 Search users
-%input
+
+= form_tag("/search", method: "get") do
+  = text_field_tag :q, params[:q]
+  = submit_tag("Search")
+
+%h2
+  = pluralize @users.length, 'result'
+  found
+
+- @users.each do |u|
+  = link_to u.email, user_path(u)

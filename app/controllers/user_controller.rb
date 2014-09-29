@@ -4,7 +4,13 @@ class UserController < ApplicationController
   end
 
   def search
-    @users = User.all
+    query = "%#{params[:q]}%"
+    @users = User.where("name LIKE ? OR
+                         city LIKE ? OR
+                         country LIKE ? OR
+                         description LIKE ? OR
+                         email LIKE ?",
+                         query,query,query,query,query).all
   end
 
   def show
