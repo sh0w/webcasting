@@ -1,5 +1,5 @@
 %div.user
   = user.name || "No name"
-  = image_tag user.image.url(:medium)
+  = link_to image_tag(user.image.url(:medium)), user
   %p= user.description || "No description"
   %p= "from #{user.city || 'City'}, #{user.country || 'Country'}"

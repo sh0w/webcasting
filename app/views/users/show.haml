@@ -1,7 +1,6 @@
-%h1
-  #{@user.name}
+%h1=@user.name || "[name]"
 
-%p= "from #{@user.city}, #{@user.country}"
+%p= "from #{@user.city || "[city]"}, #{@user.country || "[country]"}"
 
 = image_tag @user.image.url(:medium)
 

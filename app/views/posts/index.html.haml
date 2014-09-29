@@ -6,10 +6,14 @@
     = link_to 'New Post', new_post_path, :class => 'btn btn-primary'
 
   - @posts.each do |post|
-    .post{:class => @colors.sample}
-      %h2
-        = link_to post.title, post_path(post)
-      = post.content
-      %p= link_to post.user.name || post.user.email, post.user
-      %small= "#{time_ago_in_words(post.created_at)} ago"
+    %article.post{:class => @colors.sample}
+      %header= link_to post.title, post_path(post)
+      %div.content= post.content
+      %footer.clearfix
+        = link_to image_tag(post.user.image.url(:thumb)), post.user
+        .meta
+          .author
+            = link_to post.user.name || post.user.email, post.user
+            = "from #{post.user.city}, #{post.user.country}" if not post.user.city.blank? and not post.user.country.blank?
+          .date= "#{time_ago_in_words(post.created_at)} ago"
 
