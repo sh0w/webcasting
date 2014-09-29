@@ -27,11 +27,12 @@
             %span.icon-bar
           %a.brand(href="/") Webcasting
           .container.nav-collapse
-            %ul.nav
-              %li
-                = link_to "Black board", black_board_path
-              %li
-                = link_to "Search", search_path
+            - if user_signed_in?
+              %ul.nav
+                %li
+                  = link_to "Black board", black_board_path
+                %li
+                  = link_to "Search", search_path
             %ul.nav.pull-right
               - if user_signed_in?
                 %li.dropdown
