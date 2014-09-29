@@ -43,7 +43,7 @@
                     %li
                       = link_to('My Account', user_path(current_user))
                     %li
-                      = link_to('My Messages', '#')
+                      = link_to('Edit Account', edit_user_registration_path(current_user))
 
                 %li
                   = link_to('Logout', destroy_user_session_path, :method=>'delete')
