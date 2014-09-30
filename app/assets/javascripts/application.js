@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require masonry.pkgd.min
+//= require modernizr.custom.79639
+//= require slider
 //= require_tree .
