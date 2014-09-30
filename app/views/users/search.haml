@@ -1,6 +1,6 @@
-.page-header
+#search-bar.page-header
   = form_tag("/search", method: "get") do
-    = text_field_tag :q, params[:q]
+    = text_field_tag :q, params[:q], :placeholder => "Search users..."
     = submit_tag("Search")
 
 %h2

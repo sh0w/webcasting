@@ -1,4 +1,8 @@
-%h1=@user.name || "[name]"
+.page-header
+  %h1
+    = "Your Account" if @user == current_user
+    = @user.name || "[name]" unless @user == current_user
+
 
 %p= "from #{@user.city || "[city]"}, #{@user.country || "[country]"}"
 
