@@ -5,27 +5,33 @@
       %h2
         =@user.name
         %br>/
-        %span
-          from #{@user.city || "[city]"}, #{@user.country || "[country]"}
-        %span
-          born #{@user.birthdate || "[birthdate]"}
-      %p
-        %span
-          About myself
-        =@user.description
-      %p
-        %span
-          Skills
-        =@user.skills
-      %p
-        %span
-          Looking for
-        =@user.looking_for
+        - if not @user.city.blank? and not @user.country.blank?
+          %span
+            from #{@user.city || "[city]"}, #{@user.country || "[country]"}
+        - if not @user.birthdate.blank?
+          %span
+            born #{@user.birthdate || "[birthdate]"}
+
+
+      - if not @user.description.blank?
+        %p
+          %span About myself
+          =@user.description
+
+      - if not @user.skills.blank?
+        %p
+          %span Skills
+          =@user.skills
+
+      - if not @user.looking_for.blank?
+        %p
+          %span Looking for
+          =@user.looking_for
       = link_to "Message #{@user.name}", message_path(@user), :class => "btn btn-primary btn-large"
   //ps-contentwrapper
   .ps-slidewrapper
     .ps-slides
-      %div{:style => "background-image:url("+@user.image.url(:medium)+");"}
+      %div{:style => "background-image:url("+@user.image.url(:original)+");"}
     %nav
       %a.ps-prev{:href => "#"}
       %a.ps-next{:href => "#"}
