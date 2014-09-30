@@ -7,8 +7,9 @@ class UsersController < ApplicationController
                          city LIKE ? OR
                          country LIKE ? OR
                          description LIKE ? OR
+                         skills LIKE ? OR
                          email LIKE ?",
-                         query,query,query,query,query).all
+                         query,query,query,query,query,query).all
   end
 
   def show

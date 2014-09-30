@@ -3,10 +3,6 @@
     = text_field_tag :q, params[:q], :placeholder => "Search users..."
     = submit_tag("Search")
 
-%h2
-  = pluralize @users.length, 'result'
-  found
-
 #userlist
   - @users.each do |u|
     = render u

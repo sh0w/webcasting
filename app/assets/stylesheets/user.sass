@@ -5,10 +5,59 @@
 
 #userlist
   .user
-    width: 400px
+    width: 350px
+    height: 350px
     float: left
     margin: 20px
     padding: 30px
+    color: #3e6b65
+    font-size: 1.4em
+    line-height: 1.6em
+    opcacity: 0.8
+    -webkit-transition: opacity 0.3s ease-in-out
+    -moz-transition: opacity 0.3s ease-in-out
+    -ms-transition: opacity 0.3s ease-in-out
+    -o-transition: opacity 0.3s ease-in-out
+    transition: opacity 0.3s ease-in-out
+
+    &:hover
+      opacity: 1
+
+      img
+        opacity: 0.5
+
+    img
+      width: 300px
+      height: 300px
+      border: 10px white solid
+      opacity: 0.2
+      z-index: 1
+      -webkit-transition: opacity 0.3s ease-in-out
+      -moz-transition: opacity 0.3s ease-in-out
+      -ms-transition: opacity 0.3s ease-in-out
+      -o-transition: opacity 0.3s ease-in-out
+      transition: opacity 0.3s ease-in-out
+
+    .name
+      position: absolute
+      top: 15px
+      left: 38px
+      text-transform: uppercase
+      color: #434742
+      font-size: 1.5em
+      z-index: 2
+
+    .info
+      position: absolute
+      top: 70px
+      left: 0px
+      z-index: 2
+
+    .description
+      position: absolute
+      top: 200px
+      left: 200px
+      z-index: 2
 
 #inbox
 

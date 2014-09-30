@@ -1,5 +1,8 @@
 %div.user.clearfix
-  = user.name || "No name"
+  .name= user.name || "No name"
+  .info
+    - if not user.city.blank? and not user.country.blank?
+      %p= "from #{user.city || 'City'}, #{user.country || 'Country'}"
   = link_to image_tag(user.image.url(:medium)), user
-  %p= user.description || "No description"
-  %p= "from #{user.city || 'City'}, #{user.country || 'Country'}"
+  .description
+    = user.skills
