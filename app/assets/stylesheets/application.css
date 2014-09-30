@@ -22,7 +22,7 @@
     webkit-border-radius: 0px;
 }
 
-#menu .navbar-inner li:hover, .brand:hover {
+#menu .navbar-inner li:hover, .brand:hover, .navbar-inverse .nav li.dropdown.open > .dropdown-toggle {
     background: #9dcdc7 !important;
 }
 
@@ -35,5 +35,5 @@
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
     font-size: 1.4em;
     font-weight: 300;
-
+    margin:0;
 }

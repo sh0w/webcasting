@@ -1,12 +1,21 @@
-.page-header
-  %h1
-    = "Your Account" if @user == current_user
-    = @user.name || "[name]" unless @user == current_user
-
-
-%p= "from #{@user.city || "[city]"}, #{@user.country || "[country]"}"
-
-= image_tag @user.image.url(:medium)
-
-%p= @user.description
-
+%section#ps-container.ps-container
+  .ps-contentwrapper
+    .ps-content
+      %h2
+        =@user.name
+        %br>/
+        %span
+          from #{@user.city || "[city]"}, #{@user.country || "[country]"}
+        %span
+          born #{@user.birthdate || "[birthdate]"}
+      %p= @user.description
+      %p= @user.looking_for
+  //ps-contentwrapper
+  .ps-slidewrapper
+    .ps-slides
+      %div{:style => "background-image:url("+@user.image.url(:medium)+");"}
+    %nav
+      %a.ps-prev{:href => "#"}
+      %a.ps-next{:href => "#"}
+  //ps-slidewrapper
+//ps-container
