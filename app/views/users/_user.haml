@@ -1,4 +1,4 @@
-%div.user
+%div.user.clearfix
   = user.name || "No name"
   = link_to image_tag(user.image.url(:medium)), user
   %p= user.description || "No description"

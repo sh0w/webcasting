@@ -10,3 +10,4 @@
 
 %p= @user.description
 
+= link_to "Message #{@user.name}", message_path(@user), :class => "btn btn-primary btn-large"

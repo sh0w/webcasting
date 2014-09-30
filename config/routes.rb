@@ -12,6 +12,7 @@ Webcasting::Application.routes.draw do
   match 'search/' => 'users#search', :as => :search
   match 'inbox/' => 'users#inbox', :as => :inbox
   match 'blackboard' => 'posts#index', :as => :black_board
+  match 'user/:id/message' => 'users#new_message', :as => :message
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

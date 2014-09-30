@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :description, :city, :country, :name, :image, :university_name
 
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "60x60#" }
+  has_attached_file :image, :styles => { :medium => "300x300#", :thumb => "60x60#" }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 #  attr_accessor :university_name

@@ -2,12 +2,14 @@
 .page-header
   %h1= @post.title
 
-%p
-  posted by
-  = link_to @post.user.email, @post.user
-  = time_ago_in_words(@post.created_at)
-  ago
 
+%p.clearfix
+  = link_to image_tag(@post.user.image.url(:thumb)), @post.user
+  .meta
+    .author
+      = link_to @post.user.name || @post.user.email, @post.user
+      = "from #{@post.user.city}, #{@post.user.country}" if not @post.user.city.blank? and not @post.user.country.blank?
+    .date= "#{time_ago_in_words(@post.created_at)} ago"
 %p
   = @post.content
 
