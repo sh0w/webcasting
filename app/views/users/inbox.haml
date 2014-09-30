@@ -1,4 +1,7 @@
-%h1 My conversations
+.page-header
+  %h1
+    = link_to "Your Account", current_user
+    &gt; Messages
 
 - @my_conversations.each do |conv|
   .conversation

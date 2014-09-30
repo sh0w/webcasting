@@ -1,4 +1,7 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<div class="page-header">
+  <h1>Your Account &gt; Edit Profile</h1>
+</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :multipart => true }) do |f| %>
   <%= devise_error_messages! %>
