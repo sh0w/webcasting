@@ -15,4 +15,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def inbox
+    @my_conversations = current_user.mailbox.conversations
+    @messages_first_conv= @my_conversations.first.receipts_for current_user
+
+
+
+  end
 end

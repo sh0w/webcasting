@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  acts_as_messageable
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :omniauthable
   devise :database_authenticatable, :registerable,
@@ -23,4 +25,11 @@ class User < ActiveRecord::Base
     self.university = University.find_or_create_by_name(name) unless name.blank?
   end
 
+  def mailboxer_email(object)
+    #Check if an email should be sent for that object
+    #if true
+    return nil
+    #if false
+    #return nil
+  end
 end
