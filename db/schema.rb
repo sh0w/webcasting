@@ -76,6 +76,14 @@ ActiveRecord::Schema.define(:version => 20140930133044) do
 
   add_index "posts", ["user_id"], :name => "index_blackboard_posts_on_user_id"
 
+  create_table "students", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "talente"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "universities", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false

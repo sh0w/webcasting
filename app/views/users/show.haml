@@ -9,8 +9,18 @@
           from #{@user.city || "[city]"}, #{@user.country || "[country]"}
         %span
           born #{@user.birthdate || "[birthdate]"}
-      %p= @user.description
-      %p= @user.looking_for
+      %p
+        %span
+          About myself
+        =@user.description
+      %p
+        %span
+          Skills
+        =@user.skills
+      %p
+        %span
+          Looking for
+        =@user.looking_for
       = link_to "Message #{@user.name}", message_path(@user), :class => "btn btn-primary btn-large"
   //ps-contentwrapper
   .ps-slidewrapper
