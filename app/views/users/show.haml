@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 %section#ps-container.ps-container
   .ps-contentwrapper
     .ps-content
@@ -10,6 +11,7 @@
           born #{@user.birthdate || "[birthdate]"}
       %p= @user.description
       %p= @user.looking_for
+      = link_to "Message #{@user.name}", message_path(@user), :class => "btn btn-primary btn-large"
   //ps-contentwrapper
   .ps-slidewrapper
     .ps-slides

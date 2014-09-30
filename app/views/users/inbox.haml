@@ -3,15 +3,26 @@
     = link_to "Your Account", current_user
     &gt; Messages
 
-- @my_conversations.each do |conv|
-  .conversation
-    %b= conv.subject
-    -#%small= "#{time_ago_in_words(conv.created_at)} ago"
-    - receiver = conv.receipts.first.receiver
-    - if (receiver == current_user)
-      = image_tag receiver.image.url(:thumb)
 
-    - conv.receipts_for(current_user).each do |r|
-      -#%b= r.message.subject
-      %i= r.message.body
-      %small= "#{time_ago_in_words(r.created_at)} ago"
+%h2= "You don't have any messages!" if @my_conversations.empty?
+
+
+#inbox
+  - @my_conversations.each do |conv|
+    .conversation
+      %b= conv.subject
+      -#%small= "#{time_ago_in_words(conv.created_at)} ago"
+      - receiver = conv.receipts.first.receiver
+
+      - conv.receipts_for(current_user).each do |r|
+        - if r.mailbox_type == "sentbox"
+          sent message:
+          = image_tag current_user.image.url(:thumb)
+        - if r.mailbox_type == "inbox"
+          received message:
+          = image_tag r.message.sender.image.url(:thumb)
+
+
+        -#%b= r.message.subject
+        %i= r.message.body
+        %small= "#{time_ago_in_words(r.created_at)} ago"
