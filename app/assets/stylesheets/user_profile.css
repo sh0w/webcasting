@@ -2,7 +2,8 @@
 .ps-container {
 	position: absolute;
 	width: 100%;
-	height: 100%;
+    bottom:0;
+    top:69px;
 	overflow: hidden;
 	text-transform: uppercase;
 	color: #555;
@@ -39,7 +40,7 @@
 }
 
 .ps-contentwrapper {
-	top: 30px;
+	top: 0px;
 	bottom: 0px;
 	overflow: hidden;
 	z-index: 1000;
@@ -50,6 +51,7 @@
 	width: 100%;
 	height: 100%;
 	padding: 50px;
+    box-sizing: border-box;
 }
 
 .ps-content h2 {
@@ -94,26 +96,22 @@
 .ps-content a:last-child {
 	font-size: 14px;
 	font-weight: 700;
-	color: #555;
 	letter-spacing: 4px;
 	float: right;
-	border: 3px solid #555;
-	padding: 3px;
+	border: 0;
+	padding: 10px;
 	text-indent: 4px;
 }
 
-.no-touch .ps-content a:last-child:hover {
-	color: #b2d79d;
-	border-color: #b2d79d;
-}
 
-.ps-content a:last-child:before {
-	content: '\53';
-	font-family: 'icon';
-	font-style: normal;
-	font-weight: normal;
-	speak: none;
-	padding-right: 5px;
+.btn-primary{
+    background-color:#8DAAB4;
+    background-image: none;
+}
+.btn-primary:hover {
+	background-color: #9dcdc7;
+    transition:none;
+    background-position: 0 -40px;
 }
 
 .ps-slidewrapper {

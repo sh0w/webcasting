@@ -1,8 +1,11 @@
+%p=@id
+
 = form_tag do |f|
   .page-header
     %h1= "Message #{@receiver.name}\n"
 
   %div
+    = text_field_tag :subject
     = text_area_tag :body, "", :placeholder =>"Hey, #{@receiver.name}...\n", :size => 10
 
   = submit_tag "Send", :class=>"btn btn-primary"

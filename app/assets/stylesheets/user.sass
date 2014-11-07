@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$h1: 20px
+$h2: 18px
+$normal: 14px
+$small: 12px
 
 #userlist
   .user
@@ -11,7 +15,7 @@
     margin: 20px
     padding: 30px
     color: #3e6b65
-    font-size: 1.4em
+    font-size: $h2
     line-height: 1.6em
     opcacity: 0.8
     -webkit-transition: opacity 0.3s ease-in-out
@@ -44,7 +48,7 @@
       left: 38px
       text-transform: uppercase
       color: #434742
-      font-size: 1.5em
+      font-size: $h1
       z-index: 2
 
     .info
@@ -61,7 +65,38 @@
 
 #inbox
 
-  .conversation
-    border: 1px solid #e8a19b
-    margin: 10px
+  .conversations
     padding: 20px
+    background-color: #F2F2F2
+
+  .recipients
+    padding: 0px
+    background-color: #fff
+
+    a
+      display: block
+      font-size: $h1
+      padding: 20px 10px 20px 40px
+      position: relative
+
+      &:hover, &.active
+        text-decoration: none
+        background-color: #687F86
+        color: #fff
+
+      span
+        font-size: $small
+        display: block
+
+      small
+        font-size: $small
+        position: absolute
+        right: 10px
+        top: 10px
+
+.message_box
+  .message_curr_user
+  .message_text
+    background-color: #fff
+
+  .message_other_user

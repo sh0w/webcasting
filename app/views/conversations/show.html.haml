@@ -1,0 +1,20 @@
+.page-header
+  %h1
+    = link_to "Your Account", current_user
+    &gt; Messages
+
+%h2= "You don't have any messages!" if conversation.receipts_for(current_user).empty?
+
+
+.col-md-3
+
+
+%h1= conversation.subject
+
+%ul
+  = content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt|
+    - message = receipt.message
+    %p= receipt.message.sender.name
+    &nbsp
+    =message.body
+= render 'messages/form', conversation: conversation

@@ -2,9 +2,7 @@ Webcasting::Application.routes.draw do
   resources :posts
 
 
-  devise_for :users
-
-  resources :students
+  devise_for :users, :controllers => {:registrations => "registrations"}
 
   #resources :user
 
@@ -13,6 +11,15 @@ Webcasting::Application.routes.draw do
   match 'inbox/' => 'users#inbox', :as => :inbox
   match 'blackboard' => 'posts#index', :as => :black_board
   match 'user/:id/message' => 'users#new_message', :as => :message
+  match 'user/:id/show_message' => 'users#show_message', :as => :show_message
+
+  resources :conversations, only: [:index, :show, :new, :create] do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

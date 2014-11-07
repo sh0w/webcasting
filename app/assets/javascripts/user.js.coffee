@@ -3,3 +3,14 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $('#userlist').masonry()
+
+$ ->
+
+ $("a.show_msg").on("ajax:success", (e, data, status, xhr) ->
+   $('.show_msg').removeClass('active')
+   $(this).addClass('active')
+   $('#messages').html(xhr.responseText)
+  ).on "ajax:error", (e, xhr, status, error) ->
+   $('.show_msg').removeClass('active')
+   $(this).addClass('active')
+   $('#messages').html(xhr.responseText)

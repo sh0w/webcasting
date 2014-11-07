@@ -31,34 +31,58 @@
 @input-border-focus: #8daab4;
 @brand-primary:  #8daab4;
 
+small{
+  font-size: 0.6em;
+}
 
 #menu {
   background: #1c473a !important;
   margin: 0px;
+  border:0;
+}
+
+.navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
+  border-bottom-color: #fff;
+  border-top-color: #fff;
+  margin-top:0;
+  vertical-align: middle;
 }
 
 .page-header {
   background: #d77d7b;
-  margin-top: 0px;
-  padding-top: 20px;
+  margin: 0px;
   color: white !important;
   text-align: center;
-  height: 60px
+  height: 80px;
+  border: 0;
+  h1 {
+    margin: 0;
+    line-height:80px;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 2em;
+    a {
+      color: white
+    }
+  }
 }
 
-.page-header h1 {
-  margin-top: 5px;
-  font-weight: normal;
-  text-transform: uppercase;
-  font-size: 2em;
-
-}
-
-
-.page-header h1 a {
-  color: white
-}
 .container-fluid {
   padding: 0px;
 }
 
+.dropdown-menu{
+  background-color:#9DCDC7;
+  border-radius: 0 0 4px 4px;
+  border:0;
+  top:69px;
+  margin-top:0;
+}
+
+.navbar .nav > li > .dropdown-menu:before, .navbar .nav > li > .dropdown-menu:after {
+  border:0;
+}
+
+form {
+  padding: 16px 0;
+}

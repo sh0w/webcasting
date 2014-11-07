@@ -7,7 +7,7 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- *
+ *= require bootstrap.min
  *= require_self
  *= require_tree .
  */
@@ -29,6 +29,10 @@ body {
     border: 0px;
     border-radius: 0px;
     webkit-border-radius: 0px;
+}
+
+.thumb img, img.thumb{
+    border-radius: 50%
 }
 
 #menu .navbar-inner li:hover, .brand:hover, .navbar-inverse .nav li.dropdown.open > .dropdown-toggle {
@@ -53,6 +57,17 @@ body {
     bottom: 80px;
 }
 
+body > .container-fluid,  body > .container-fluid > .row-fluid{
+    height:100%
+}
+
+body > .container-fluid > .row-fluid > .span12{
+    position:relative;
+    height:100%;
+    padding-top:69px;
+    box-sizing:border-box;
+}
+
 body > section:first-of-type {
     display: table;
     height: 100%;
@@ -63,3 +78,4 @@ body > section:first-of-type {
     display: table-cell;
     vertical-align: middle;
 }
+

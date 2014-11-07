@@ -32,4 +32,5 @@ class User < ActiveRecord::Base
     #if false
     #return nil
   end
+
 end

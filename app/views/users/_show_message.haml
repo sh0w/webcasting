@@ -1,0 +1,18 @@
+- @show_conv.receipts_for(current_user).each do |r|
+  .message_box
+    - if r.message.sender.id == current_user.id
+      .message_curr_user
+      you sent:
+      .message_text
+        %i= r.message.body
+        = image_tag current_user.image.url(:thumb), class: "thumb"
+        %small= "#{time_ago_in_words(r.created_at)} ago"
+    - else
+      .message_other_user
+        = r.message.sender.name
+      .message_text
+        %i= r.message.body
+        = image_tag r.message.sender.image.url(:thumb), class: "thumb"
+        %small= "#{time_ago_in_words(r.created_at)} ago"
+
+

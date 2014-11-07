@@ -47,3 +47,6 @@ gem 'haml-rails'
 gem 'mailboxer'
 
 gem "paperclip", "~> 3.0"
+
+gem "simple_form"
+gem "debugger"
