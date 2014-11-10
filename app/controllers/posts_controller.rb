@@ -31,13 +31,18 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @post }
+      format.js { render partial: 'form' }
     end
   end
 
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.js { render partial: 'form' }
+    end
   end
 
   # POST /posts
@@ -48,7 +53,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Blackboard post was successfully created.' }
+        format.html { redirect_to black_board_path }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
@@ -64,7 +69,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to @post, notice: 'Blackboard post was successfully updated.' }
+        format.html { redirect_to black_board_path }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -84,4 +89,5 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

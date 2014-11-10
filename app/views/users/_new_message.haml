@@ -1,3 +1,7 @@
+- @conv.participants.each do |p|
+  - if p.id != current_user.id
+    - @receiver = p
+
 %p=@id
 
 = form_tag do |f|

@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   acts_as_messageable
+  acts_as_votable
+  acts_as_voter
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :omniauthable
@@ -31,6 +33,11 @@ class User < ActiveRecord::Base
     return nil
     #if false
     #return nil
+  end
+
+  before_destroy :delete_likes
+  def delete_likes
+    self.likes.delete_all
   end
 
 end

@@ -2,7 +2,7 @@
   .ps-contentwrapper
     .ps-content
       %h2
-        =@user.name
+        = @user.name
         %br>/
         - if not @user.city.blank? and not @user.country.blank?
           %span
@@ -26,7 +26,8 @@
         %p
           %span Looking for
           =@user.looking_for
-      = link_to "Message #{@user.name}", message_path(@user), :class => "btn btn-primary btn-large"
+      = render 'messages/form', conversation: @old_conv, user: @user
+      /= link_to "Message #{@user.name}", message_path(@user), :class => "btn btn-primary btn-large"
   //ps-contentwrapper
   .ps-slidewrapper
     .ps-slides

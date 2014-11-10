@@ -15,6 +15,12 @@
 // Font Awesome
 @import "fontawesome/font-awesome";
 
+@h1: 20px;
+@h2: 18px;
+@normal: 14px;
+@small: 12px;
+@title: 25px;
+
 // Glyphicons
 //@import "twitter/bootstrap/sprites.less";
 
@@ -53,14 +59,19 @@ small{
   margin: 0px;
   color: white !important;
   text-align: center;
-  height: 80px;
+  height: 69px;
   border: 0;
+  position: absolute;
+  top: 69px;
+  width: 100%;
+  z-index: 2;
+
   h1 {
     margin: 0;
-    line-height:80px;
+    line-height:69px;
     font-weight: normal;
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: @title;
     a {
       color: white
     }
@@ -86,3 +97,4 @@ small{
 form {
   padding: 16px 0;
 }
+

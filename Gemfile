@@ -50,3 +50,5 @@ gem "paperclip", "~> 3.0"
 
 gem "simple_form"
 gem "debugger"
+
+gem "acts_as_votable"

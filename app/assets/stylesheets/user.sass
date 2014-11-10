@@ -6,6 +6,7 @@ $h1: 20px
 $h2: 18px
 $normal: 14px
 $small: 12px
+$title: 25px
 
 #userlist
   .user
@@ -51,6 +52,11 @@ $small: 12px
       font-size: $h1
       z-index: 2
 
+    .like
+      position: absolute
+      right: 15px
+      top: 15px
+
     .info
       position: absolute
       top: 70px
@@ -64,14 +70,17 @@ $small: 12px
       z-index: 2
 
 #inbox
-
+  height: 100%
   .conversations
     padding: 20px
     background-color: #F2F2F2
-
+    overflow-y: scroll
+    height: 100%
   .recipients
     padding: 0px
     background-color: #fff
+    overflow-y: scroll
+    height: 100%
 
     a
       display: block
@@ -107,3 +116,29 @@ $small: 12px
 
   .message_other_user
     float: right
+
+.message-container
+  max-width: 900px
+
+textarea
+  height: 100px
+  width: 100%
+  border-radius: 0
+  border: 0
+  resize: none
+  margin: 0
+
+input[type=text],input[type=email]
+  width: 100%
+  border-radius: 0
+  border: 0
+  height: 40px
+  margin: 0 0 4px
+
+.message-actions
+  background-color: #fff
+  text-align: right
+
+#edit_user
+  input, textarea
+    margin-bottom: 14px

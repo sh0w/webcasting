@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #blackboard
+
+  > div
+    z-index: 2
+
   .post
     width: 400px
     float: left
@@ -14,6 +18,9 @@
     -ms-transition: opacity 0.3s ease-in-out
     -o-transition: opacity 0.3s ease-in-out
     transition: opacity 0.3s ease-in-out
+
+    .post-container
+      clear: both
 
     &:hover
       opacity: 1
@@ -45,6 +52,10 @@
 
       .date
         font-size: 0.9em
+
+    .add_form
+      float: right
+      margin: 10px
 
 
   .red

@@ -13,4 +13,4 @@ $ ->
   ).on "ajax:error", (e, xhr, status, error) ->
    $('.show_msg').removeClass('active')
    $(this).addClass('active')
-   $('#messages').html(xhr.responseText)
+   $('#messages > .message-container').html(xhr.responseText)
