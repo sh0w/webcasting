@@ -31,6 +31,14 @@ body {
     webkit-border-radius: 0px;
 }
 
+.btn-send {
+    background-color: #d77d7b;
+    border: 0 none;
+    color: #fff;
+    padding: 6px 12px;
+    margin: 6px;
+}
+
 .thumb img, img.thumb{
     border-radius: 50%
 }
@@ -64,7 +72,7 @@ body > .container-fluid,  body > .container-fluid > .row-fluid{
 body > .container-fluid > .row-fluid > .span12{
     position:relative;
     height:100%;
-    padding-top:69px;
+    padding-top:138px;
     box-sizing:border-box;
 }
 
@@ -79,3 +87,56 @@ body > section:first-of-type {
     vertical-align: middle;
 }
 
+.delete-i {
+    background-image: url("trash_icon.png");
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    float: right;
+}
+.delete-i-with-text {
+    background-image: url("trash_icon2.png");
+    background-repeat: no-repeat;
+    width: auto;
+    height: 25px;
+    float: right;
+    background-position: right center;
+    line-height: 25px;
+    color: #9dcdc7;
+    padding-right:30px;
+}
+.delete-i-with-text:hover {
+    color: #9dcdc7;
+}
+
+
+.edit-i {
+   background-image: url("edit_icon.png");
+   background-repeat: no-repeat;
+   width: 25px;
+   height: 25px;
+   float: right;
+}
+
+.send-i {
+   background-image: url("send_icon.png");
+   background-repeat: no-repeat;
+   width: 25px;
+   height: 25px;
+   float: right;
+}
+
+.like-i {
+    background-image: url("mark.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    float: right;
+}
+.unlike-i {
+    background-image: url("unmark.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    float: right;
+}

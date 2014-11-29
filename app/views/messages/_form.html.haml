@@ -1,5 +1,11 @@
-= simple_form_for :message, url: reply_conversation_path(conversation) do |f|
-  = f.input :body
-  .form-actions
-    = f.button :submit, class: 'btn-primary'
-    = submit_tag 'Cancel', type: :reset, class: 'btn btn-danger'
+- if conversation.nil?
+  = simple_form_for :conversation, url: :conversations do |f|
+    = f.input :recipient, :as => :hidden, :input_html => { :value => user.id }
+    = f.input :body, :label => false, :as => :text
+    .message-actions
+      = f.button :submit, "Send", class: 'btn-send'
+- else
+  = simple_form_for :message, url: reply_conversation_path(conversation) do |f|
+    = f.input :body, :label => false, :as => :text
+    .message-actions
+      = f.button :submit, "Send", class: 'btn-send'

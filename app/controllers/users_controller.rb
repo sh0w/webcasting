@@ -16,10 +16,31 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+    if params[:id] != current_user.id
+      conversations = current_user.mailbox.conversations
+
+      @old_conv = nil
+
+      if not conversations.empty?
+        conversations.each do |conv|
+          conv.receipts_for(current_user).each do |r|
+            if r.message.sender.id == params[:id].to_i or r.message.recipients.first.id == params[:id].to_i
+              @old_conv = conv
+              break
+            end
+          end
+        end
+      end
+
+    else
+      #noch nicht getestet
+      #@likes = @user.find_voted_items.compact.first(20)
+    end
+
   end
 
   def show_message
-    params[:id]
     @my_conversations = current_user.mailbox.conversations
     @my_conversations.each do |conv|
       if conv.id === params[:id].to_i
@@ -36,44 +57,23 @@ class UsersController < ApplicationController
 
   def inbox
     #show all conversations (not just the inbox)
-    #?? gibt es einen besseren weg ohne doppelten einträgen arbeiten zu müssen???
-    @my_conversations = current_user.mailbox.inbox
-    @my_conversations.concat(current_user.mailbox.sentbox)
-    @newest_conversation = current_user.mailbox.conversations.first
+    @my_conversations = current_user.mailbox.inbox.find(:all, :order => "updated_at")
+    @my_conversations.concat(current_user.mailbox.sentbox.find(:all, :order => "updated_at"))
+    @my_conversations = @my_conversations.sort_by(&:updated_at).reverse
   end
 
-
-  def new_message
-    conversations = current_user.mailbox.conversations
-    @old_conv = nil
-
-    if not conversations.empty?
-      conversations.each do |conv|
-        conv.receipts_for(current_user).each do |r|
-          if r.message.sender.id === params[:id].to_i
-              @old_conv = conv
-            break
-          end
-        end
-      end
-    end
-
-    @receiver = User.find(params[:id])
-
-    if request.post?
-      puts "RECEIVER:"
-      puts @receiver
-
-      if @old_conv.nil?
-        current_user.send_message(@receiver, params[:body], params[:subject])
-      else
-        current_user.reply_to_conversation(@old_conv, params[:body])
-      end
-
-      redirect_to @receiver, notice: "Message successfully sent. :)"
-    else
-      puts "SHOW FORM????"
-    end
-
+  def like
+    @liked_user = User.find(params[:id])
+    @liked_user.liked_by current_user
+    redirect_to search_path
+    #flash[:notice]="Liked!"
   end
+
+  def unlike
+    @liked_user = User.find(params[:id])
+    @liked_user.unliked_by current_user
+    redirect_to search_path
+    #flash[:notice]="Unliked!"
+  end
+
 end

@@ -1,16 +1,23 @@
 #blackboard
   .post{:class => @colors.sample}
-    = link_to 'New Post', new_post_path, :class => 'btn btn-primary'
+    = link_to 'New Post', new_post_path, remote:true, :class => 'btn-send new_post'
 
   - @posts.each do |post|
     %article.post{:class => @colors.sample}
-      %header= link_to post.title, post_path(post)
-      %div.content= post.content
-      %footer.clearfix
-        = link_to image_tag(post.user.image.url(:thumb)), post.user, class: "thumb"
-        .meta
-          .author
-            = link_to post.user.name || post.user.email, post.user
-            = "from #{post.user.city}, #{post.user.country}" if not post.user.city.blank? and not post.user.country.blank?
-          .date= "#{time_ago_in_words(post.created_at)} ago"
+      - if post.user.id == current_user.id
+        =link_to "", post, method: :delete, :confirm => 'Are you sure?', :class => 'delete-i'
+        =link_to "", edit_post_path(post), remote:true, :class => 'edit_post edit-i'
+      .post-container
+        %header= link_to post.title, post_path(post)
+        %div.content= post.content
+        %footer.clearfix
+          = link_to image_tag(post.user.image.url(:thumb)), post.user, class: "thumb"
+          .meta
+            .author
+              = link_to post.user.name || post.user.email, post.user
+              = "from #{post.user.city}, #{post.user.country}" if not post.user.city.blank? and not post.user.country.blank?
+            .date= "#{time_ago_in_words(post.created_at)} ago"
+
+        - if post.user.id != current_user.id
+          =link_to "", addForm_path((post.user.id)), remote: true, :class => 'add_form send-i'
 

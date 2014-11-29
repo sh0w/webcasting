@@ -1,18 +1,16 @@
 - @show_conv.receipts_for(current_user).each do |r|
-  .message_box
-    - if r.message.sender.id == current_user.id
-      .message_curr_user
-      you sent:
-      .message_text
-        %i= r.message.body
+  .message_box.clearfix
+    - if r.message.sender.id == current_user.id or r.message.recipients.first.id == current_user.id
+      .message_curr_user.col-md-1
         = image_tag current_user.image.url(:thumb), class: "thumb"
+      .message_text.col-md-11
+        %i= r.message.body
         %small= "#{time_ago_in_words(r.created_at)} ago"
     - else
-      .message_other_user
-        = r.message.sender.name
-      .message_text
-        %i= r.message.body
+      .message_other_user.col-md-1
         = image_tag r.message.sender.image.url(:thumb), class: "thumb"
+      .message_text.col-md-11
+        %i= r.message.body
         %small= "#{time_ago_in_words(r.created_at)} ago"
 
-
+= render 'messages/form', conversation: @show_conv

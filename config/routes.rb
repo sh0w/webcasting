@@ -13,6 +13,11 @@ Webcasting::Application.routes.draw do
   match 'user/:id/message' => 'users#new_message', :as => :message
   match 'user/:id/show_message' => 'users#show_message', :as => :show_message
 
+  match 'conversation/:id/addForm' => 'conversations#addForm', :as => :addForm
+
+  match 'user/:id/like' => 'users#like', :as => "like"
+  match 'user/:id/unlike' => 'users#unlike', :as => "unlike"
+
   resources :conversations, only: [:index, :show, :new, :create] do
     member do
       post :reply
