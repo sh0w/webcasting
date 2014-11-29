@@ -41,14 +41,14 @@ end
 # gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano'
+#gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
 
 gem 'devise'
 
-gem 'libv8', '3.16.14.3'
+#gem 'libv8', '3.16.14.3'
 gem 'therubyracer'
 
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
