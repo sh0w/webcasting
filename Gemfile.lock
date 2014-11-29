@@ -53,11 +53,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-<<<<<<< HEAD
     colorize (0.7.3)
     columnize (0.8.9)
-=======
->>>>>>> bc1c77906c6b082956ad3c55a5b70dc7d6819192
     commonjs (0.2.6)
     devise (3.3.0)
       bcrypt (~> 3.0)
