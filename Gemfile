@@ -28,7 +28,6 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  ruby '2.0.0'
 end
 
 
@@ -64,3 +63,4 @@ gem "simple_form"
 
 gem "acts_as_votable"
 
+ruby '1.9.3'
