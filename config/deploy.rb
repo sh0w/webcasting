@@ -7,26 +7,6 @@ set :repository, 'https://github.com/sh0w/webcasting.git'
 
 
 
-require "bundler/capistrano"
-set :application, "serendipity"
-set :scm, :git
-set :scm_passphrase, ""
-#set :repository,  "ssh://repos.mediacube.at/opt/git/web_2012/serendipity.git/"
-#set :repository,  "https://github.com/sh0w/serendipity.git"
-set :deploy_to, "/var/www/"
-set :user, "root"
-set :branch, "master"
-default_run_options[:pty] = true
-set :use_sudo, false
-#set :port, 5412
-role :web, "193.170.99.76"                   # Your HTTP server, Apache/etc
-role :app, "193.170.99.76"                   # This may be the same as your `Web` server
-role :db,  "193.170.99.76", :primary => true # This is where Rails migrations will run
-# role :db,  "your slave db-server here
-set :bundle_flags, "--deployment --quiet"
-
-
-
 
 
 # Default branch is :master
