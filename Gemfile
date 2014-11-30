@@ -62,3 +62,6 @@ gem "paperclip", "~> 3.0"
 gem "simple_form"
 
 gem "acts_as_votable"
+
+
+ruby '2.0.0'
