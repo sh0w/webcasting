@@ -21,7 +21,7 @@
               - i = 1
               = link_to show_message_path(conv.id), remote: true, class: link_class do
                 =p.name
-                =content_tag(:span, conv.subject)
+                /=content_tag(:span, conv.subject)
                 =content_tag(:small, "#{time_ago_in_words(conv.updated_at)} ago")
     #messages.conversations.col-md-9
       .message-container

@@ -10,11 +10,11 @@
       = image_tag @user.image.url(:thumb)
       = f.file_field :image
 
-      = f.label :email
-      = f.email_field :email, autofocus: true
+      /= f.label :email
+      = f.email_field :email, :class => 'hidden'
 
       = f.label :name
-      = f.text_field :name
+      = f.text_field :name, autofocus: true
 
       = f.label :city
       = f.text_field :city
