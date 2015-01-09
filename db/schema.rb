@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141110180406) do
+ActiveRecord::Schema.define(:version => 20150109203738) do
 
   create_table "mailboxer_conversation_opt_outs", :force => true do |t|
     t.integer "unsubscriber_id"
@@ -88,6 +88,11 @@ ActiveRecord::Schema.define(:version => 20141110180406) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "universities_users", :force => true do |t|
+    t.integer "university_id"
+    t.integer "user_id"
   end
 
   create_table "users", :force => true do |t|

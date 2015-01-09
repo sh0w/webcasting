@@ -7,6 +7,9 @@
         - if not @user.city.blank? and not @user.country.blank?
           %span
             from #{@user.city || "[city]"}, #{@user.country || "[country]"}
+          %span
+            studying at
+            = raw @user.universities.collect { |uni| uni.name }.join(", ")
         - if not @user.birthdate.blank?
           %span
             born #{@user.birthdate || "[birthdate]"}

@@ -5,17 +5,19 @@ class UsersController < ApplicationController
 
   def search
     query = "%#{params[:q]}%"
-    @users = User.where("name LIKE ? OR
+
+    @users = User.includes(:universities).where("universities.name LIKE ? OR
+                         users.name LIKE ? OR
                          city LIKE ? OR
                          country LIKE ? OR
                          description LIKE ? OR
                          skills LIKE ? OR
                          email LIKE ?",
-                         query,query,query,query,query,query).all
+                         query,query,query,query,query,query,query).all
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id], :include => :universities)
 
     if params[:id] != current_user.id
       conversations = current_user.mailbox.conversations

@@ -8,7 +8,11 @@
         = link_to "", like_path(user.id), :class => 'like-i', :title => 'Prebook'
   .info
     - if not user.city.blank? and not user.country.blank?
-      %p= "from #{user.city || 'City'}, #{user.country || 'Country'}"
+      %p
+        = "from #{user.city || ' '}, #{user.country || ' '}"
+        %br
+        studying at
+        = raw user.universities.collect { |uni| uni.name }.join(", ")
   = link_to image_tag(user.image.url(:medium)), user
   .description
     = user.skills
