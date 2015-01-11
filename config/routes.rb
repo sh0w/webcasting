@@ -6,8 +6,9 @@ Webcasting::Application.routes.draw do
 
   #resources :user
 
-  match 'user/:id' => 'users#show', :as => :user
+  match 'user/:id/' => 'users#show', :as => :user
   match 'search/' => 'users#search', :as => :search
+  match 'favourites/' => 'users#favourites', :as => :favourites
   match 'inbox/' => 'users#inbox', :as => :inbox
   match 'blackboard' => 'posts#index', :as => :black_board
   match 'user/:id/message' => 'users#new_message', :as => :message

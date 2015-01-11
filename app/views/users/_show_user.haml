@@ -1,0 +1,39 @@
+.ps-content
+  %h2
+    #{@show_user.name}
+    %br>/
+    %span
+      - if not @show_user.city.blank?
+        #{@show_user.city},
+      = @show_user.country if not @show_user.country.blank?
+    - if @show_user.universities.any?
+      %span studying at #{raw @show_user.universities.collect { |uni| uni.name }.join(", ")}
+    - if not @show_user.birthdate.blank?
+      %span Age #{Time.now.utc.year - @show_user.birthdate.year - (@show_user.birthdate.to_time.change(:year => Time.now.utc.year) > Time.now.utc ? 1 : 0)}
+
+  - if not @show_user.description.blank?
+    %p
+      %span About myself
+      =@show_user.description
+
+  - if not @show_user.skills.blank?
+    %p
+      %span Skills
+      =@show_user.skills
+
+  - if not @show_user.looking_for.blank?
+    %p
+      %span Looking for
+      =@show_user.looking_for
+
+  - if not @show_user.recent_projects.blank?
+    %p
+      %span Recent projects
+      =@show_user.recent_projects
+
+  - if not @show_user.website.blank?
+    =link_to "Website", @show_user.website, target: "_blank"
+
+  - if not @show_user.id == current_user.id
+    = render 'messages/form', conversation: @old_conv, user: @show_user
+  /= link_to "Message #{@show_user.name}", message_path(@show_user), :class => "btn btn-primary btn-large"

@@ -1,43 +1,19 @@
 %section#ps-container.ps-container
+  = current_user.id
   .ps-contentwrapper
-    .ps-content
-      %h2
-        = @user.name
-        %br>/
-        - if not @user.city.blank? and not @user.country.blank?
-          %span
-            from #{@user.city || "[city]"}, #{@user.country || "[country]"}
-          %span
-            studying at
-            = raw @user.universities.collect { |uni| uni.name }.join(", ")
-        - if not @user.birthdate.blank?
-          %span
-            born #{@user.birthdate || "[birthdate]"}
+    = render "show_user", :@show_user => @user
+    - if not @user_list.nil?
+      - @user_list.each do |show_u|
+        = render "show_user", :@show_user => show_u
 
-
-      - if not @user.description.blank?
-        %p
-          %span About myself
-          =@user.description
-
-      - if not @user.skills.blank?
-        %p
-          %span Skills
-          =@user.skills
-
-      - if not @user.looking_for.blank?
-        %p
-          %span Looking for
-          =@user.looking_for
-      - if not @user.id == current_user.id
-        = render 'messages/form', conversation: @old_conv, user: @user
-      /= link_to "Message #{@user.name}", message_path(@user), :class => "btn btn-primary btn-large"
-  //ps-contentwrapper
   .ps-slidewrapper
     .ps-slides
-      %div{:style => "background-image:url("+@user.image.url(:original)+");"}
+      = render "show_user_image", :@show_user => @user
+      - if not @user_list.nil?
+        - @user_list.each do |show_u|
+          = render "show_user_image", :@show_user => show_u
     %nav
+      /=link_to "", user_path(:id => @user.id, :q => @user_list), remote: true, :class => 'ps-prev'
+      /=link_to "", user_path(:id => @user.id, :q => @user_list), remote: true, :class => 'ps-next'
       %a.ps-prev{:href => "#"}
       %a.ps-next{:href => "#"}
-  //ps-slidewrapper
-//ps-container

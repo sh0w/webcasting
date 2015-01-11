@@ -8,6 +8,7 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *= require bootstrap.min
+ *= require bootstrap-datepicker
  *= require_self
  *= require_tree .
  */
@@ -139,4 +140,24 @@ body > section:first-of-type {
     width: 35px;
     height: 35px;
     float: right;
+    margin-right: 5px;
+}
+
+#menu a > .unread{
+    bottom: 23px;
+    color: #d77d7b;
+    font-size: 16px;
+    position: absolute;
+    right: 36px;
+}
+
+#menu .dropdown-menu li a.unread:before {
+    background-color: #d77d7b;
+    border-radius: 10px;
+    content: " ";
+    height: 10px;
+    position: absolute;
+    right: 77px;
+    top: 26px;
+    width: 10px;
 }

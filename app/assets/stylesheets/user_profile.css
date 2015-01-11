@@ -7,7 +7,6 @@
 	overflow: hidden;
 	text-transform: uppercase;
 	color: #555;
-	background: #fff;
 }
 
 .ps-container > div {
@@ -42,7 +41,8 @@
 .ps-contentwrapper {
 	top: 0px;
 	bottom: 0px;
-	overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 	z-index: 1000;
 }
 

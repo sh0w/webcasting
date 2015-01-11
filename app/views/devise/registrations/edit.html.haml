@@ -24,6 +24,12 @@
       = f.label :country
       = f.text_field :country
 
+      = f.input :birthdate, :as => 'string', :input_html => { :data => {:provide => :datepicker, :"date-format" => :"yyyy-mm-dd" } }
+      /= f.input :birthdate, :as => :string, :input_html => { :data-provide => 'datepicker' }
+
+      = f.label :website
+      = f.text_field :website
+
     .col-md-6
       = f.label :description
       = f.text_area :description
@@ -33,6 +39,9 @@
 
       = f.label :looking_for
       = f.text_area :looking_for
+
+      = f.label :recent_projects
+      = f.text_area :recent_projects
 
       -if devise_mapping.confirmable? && resource.pending_reconfirmation?
         Currently waiting confirmation for:

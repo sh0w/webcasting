@@ -2,9 +2,8 @@
   %h1
     = link_to "Your Account", current_user
     &gt; Messages
-
 - if @my_conversations.empty?
-  %h2= "You don't have any messages!"
+  %h3.text-center.col-sm-12= "You don't have any messages!"
 - else
   #inbox
     - sort_array = Array.new()
@@ -22,7 +21,8 @@
               = link_to show_message_path(conv.id), remote: true, class: link_class do
                 =p.name
                 /=content_tag(:span, conv.subject)
-                =content_tag(:small, "#{time_ago_in_words(conv.updated_at)} ago")
+                = content_tag(:small, "#{time_ago_in_words(conv.updated_at)} ago", class: "unread") if conv.receipts_for(current_user).where(is_read:false).count != 0
+                = content_tag(:small, "#{time_ago_in_words(conv.updated_at)} ago") if conv.receipts_for(current_user).where(is_read:false).count == 0
     #messages.conversations.col-md-9
       .message-container
         =render 'show_message', :@show_conv => @my_conversations.first

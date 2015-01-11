@@ -1,0 +1,9 @@
+.page-header
+  %h1
+    Your Favourites
+
+#userlist
+  - @users.each do |u|
+    = render u
+  - if @users.empty?
+    %h3.text-center.col-sm-12="You don't have any favourites yet!"

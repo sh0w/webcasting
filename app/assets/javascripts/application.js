@@ -16,4 +16,5 @@
 //= require masonry.pkgd.min
 //= require modernizr.custom.79639
 //= require slider
+//= require bootstrap-datepicker
 //= require_tree .

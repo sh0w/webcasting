@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150109203738) do
+ActiveRecord::Schema.define(:version => 20150111183554) do
 
   create_table "mailboxer_conversation_opt_outs", :force => true do |t|
     t.integer "unsubscriber_id"
@@ -70,8 +70,9 @@ ActiveRecord::Schema.define(:version => 20150109203738) do
     t.text     "content"
     t.string   "title"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "project_url"
   end
 
   add_index "posts", ["user_id"], :name => "index_blackboard_posts_on_user_id"
@@ -120,6 +121,8 @@ ActiveRecord::Schema.define(:version => 20150109203738) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "skills"
+    t.string   "website"
+    t.text     "recent_projects"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

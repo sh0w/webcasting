@@ -9,10 +9,9 @@
   .info
     - if not user.city.blank? and not user.country.blank?
       %p
-        = "from #{user.city || ' '}, #{user.country || ' '}"
+        = "#{user.city || ' '}, #{user.country || ' '}"
         %br
-        studying at
         = raw user.universities.collect { |uni| uni.name }.join(", ")
-  = link_to image_tag(user.image.url(:medium)), user
+  = link_to image_tag(user.image.url(:medium)), user_path(:id => user.id, :q => params[:q])
   .description
     = user.skills

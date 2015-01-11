@@ -2,11 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$h1: 20px
-$h2: 18px
+$h1: 26px
+$h2: 20px
+$h3: 18px
 $normal: 14px
 $small: 12px
 $title: 25px
+$c_normal: #434742
+$special_font: 'Axis','Helvetica Neue',Helvetica,Arial,sans-serif
+
+@font-face
+  font-family: 'Axis'
+  src: font-url('axis.eot')
+  src: font-url('axis.eot?#iefix') format("embedded-opentype"), font-url('axis.svg#icomoon') format("svg"), font-url('axis.woff') format("woff"), font-url('axis.ttf') format("truetype")
+  font-weight: normal
+  font-style: normal
 
 #userlist
   .user
@@ -15,9 +25,9 @@ $title: 25px
     float: left
     margin: 20px
     padding: 30px
-    color: #3e6b65
     font-size: $h2
     line-height: 1.6em
+    color: $c_normal
     opcacity: 0.8
     -webkit-transition: opacity 0.3s ease-in-out
     -moz-transition: opacity 0.3s ease-in-out
@@ -29,7 +39,9 @@ $title: 25px
       opacity: 1
 
       img
-        opacity: 0.5
+        opacity: 1
+        z-index: 999
+        position: relative
 
     img
       width: 300px
@@ -46,11 +58,13 @@ $title: 25px
     .name
       position: absolute
       top: 15px
-      left: 38px
+      left: 0
       text-transform: uppercase
-      color: #434742
       font-size: $h1
       z-index: 2
+      text-decoration: underline
+      font-family: $special_font
+      right: 30px
 
     .like
       position: absolute
@@ -60,15 +74,19 @@ $title: 25px
 
     .info
       position: absolute
+      font-family: $special_font
+      text-transform: uppercase
       top: 70px
       left: 0px
       z-index: 2
+      right: 30px
 
     .description
       position: absolute
       top: 200px
-      left: 200px
+      left: 0
       z-index: 2
+      font-size: $h3
 
 #inbox
   height: 100%
@@ -86,7 +104,7 @@ $title: 25px
     a
       display: block
       font-size: $h1
-      padding: 20px 10px 20px 40px
+      padding: 20px 150px 20px 40px
       position: relative
 
       &:hover, &.active
@@ -103,6 +121,16 @@ $title: 25px
         position: absolute
         right: 10px
         top: 10px
+
+      .unread:before
+        background-color: #d77d7b
+        border-radius: 13px
+        content: " "
+        height: 13px
+        left: -28px
+        position: absolute
+        top: 17px
+        width: 13px
 
 .message_box
   margin-bottom: 20px

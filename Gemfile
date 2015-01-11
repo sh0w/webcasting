@@ -63,3 +63,5 @@ gem "simple_form"
 gem "acts_as_votable"
 
 ruby '1.9.3'
+
+gem 'bootstrap-datepicker-rails'

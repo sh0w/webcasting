@@ -5,12 +5,25 @@
 $('#userlist').masonry()
 
 $ ->
+ $('#messages').animate({ scrollTop: $(document).height() }, 0) if $("#messages").length > 0
 
  $("a.show_msg").on("ajax:success", (e, data, status, xhr) ->
    $('.show_msg').removeClass('active')
-   $(this).addClass('active')
-   $('#messages').html(xhr.responseText)
-  ).on "ajax:error", (e, xhr, status, error) ->
-   $('.show_msg').removeClass('active')
+   $(this).child('small').removeClass('unread')
    $(this).addClass('active')
    $('#messages > .message-container').html(xhr.responseText)
+
+  ).on "ajax:error", (e, xhr, status, error) ->
+   $('.show_msg').removeClass('active')
+   $(this).children('small').removeClass('unread')
+   $(this).addClass('active')
+   $('#messages > .message-container').html(xhr.responseText)
+   $('#messages').animate({ scrollTop: $(document).height() }, 0)
+
+ $("a.ps-prev").on("ajax:success", (e, data, status, xhr) ->
+   $('#ps-container').parent().html(xhr.responseText)
+ ).on "ajax:error", (e, xhr, status, error) ->
+   $('#ps-container').parent().html(xhr.responseText)
+
+
+  Slider.init() if $(".ps-prev").length > 0

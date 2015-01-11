@@ -37,16 +37,18 @@
               %li.dropdown
                 %a.dropdown-toggle(href='#'  data-toggle="dropdown")
                   = current_user.name || current_user.email
-                  %span.caret
-
+                  = content_tag(:span,"",class: "caret")
+                  = content_tag(:span,current_user.mailbox.receipts.where(is_read:false).count,class: "unread") if current_user.mailbox.receipts.where(is_read:false).count != 0
                 %ul.dropdown-menu(role="menu")
                   %li
                     = link_to 'My Account', user_path(current_user)
                   %li
                     = link_to 'Edit Account', edit_user_registration_path(current_user)
                   %li
-                    = link_to 'Messages', inbox_path
-
+                    = link_to 'My Favourites', favourites_path
+                  %li
+                    = link_to 'Messages', inbox_path, class: "unread" if current_user.mailbox.receipts.where(is_read:false).count != 0
+                    = link_to 'Messages', inbox_path if current_user.mailbox.receipts.where(is_read:false).count == 0
               %li
                 = link_to('Logout', destroy_user_session_path, :method=>'delete')
             - else
