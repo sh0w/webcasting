@@ -49,6 +49,7 @@ gem 'devise'
 
 #gem 'libv8', '3.16.14.3'
 gem 'therubyracer'
+gem 'node'
 
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
@@ -66,8 +67,8 @@ ruby '1.9.3'
 
 gem 'bootstrap-datepicker-rails'
 
-gem 'capistrano', '~> 3.1.0'
-gem 'capistrano-bundler', '~> 1.1.2'
-gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
 
 gem 'capistrano-rvm'

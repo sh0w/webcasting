@@ -73,6 +73,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
+    eventmachine (1.0.4)
     execjs (2.2.1)
     foreigner (1.6.1)
       activerecord (>= 3.0.0)
@@ -95,6 +96,7 @@ GEM
     less-rails (2.3.3)
       actionpack (>= 3.1)
       less (~> 2.3.1)
+    libv8 (3.11.8.17)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -108,6 +110,8 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
+    node (0.0.2)
+      eventmachine
     orm_adapter (0.5.0)
     paperclip (3.5.4)
       activemodel (>= 3.0.0)
@@ -165,9 +169,8 @@ GEM
       colorize (>= 0.7.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
-    therubyracer (0.11.0beta1)
-      ref
-    therubyracer (0.11.0beta1-x86-mingw32)
+    therubyracer (0.11.4)
+      libv8 (~> 3.11.8.12)
       ref
     thor (0.19.1)
     thread_safe (0.3.4)
@@ -194,9 +197,9 @@ PLATFORMS
 DEPENDENCIES
   acts_as_votable
   bootstrap-datepicker-rails
-  capistrano (~> 3.1.0)
-  capistrano-bundler (~> 1.1.2)
-  capistrano-rails (~> 1.1.1)
+  capistrano
+  capistrano-bundler
+  capistrano-rails
   capistrano-rvm
   coffee-rails (~> 3.2.1)
   devise
@@ -205,6 +208,7 @@ DEPENDENCIES
   less-rails
   mailboxer
   mysql2
+  node
   paperclip (~> 3.0)
   rails (= 3.2.13)
   rails_12factor
