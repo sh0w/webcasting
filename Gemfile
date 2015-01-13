@@ -65,3 +65,9 @@ gem "acts_as_votable"
 ruby '1.9.3'
 
 gem 'bootstrap-datepicker-rails'
+
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+
+gem 'capistrano-rvm', github: "capistrano/rvm"

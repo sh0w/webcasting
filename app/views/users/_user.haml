@@ -12,6 +12,9 @@
         = "#{user.city || ' '}, #{user.country || ' '}"
         %br
         = raw user.universities.collect { |uni| uni.name }.join(", ")
+
+        - if File.exist?(request.protocol + request.host_with_port + user.image.url)
+          ja
   = link_to image_tag(user.image.url(:medium)), user_path(:id => user.id, :q => params[:q])
   .description
     = user.skills
