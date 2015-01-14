@@ -2,14 +2,16 @@
 #lock '3.2.1'
 
 set :application, 'webcasting'
-set :repo_url, 'git@github.com:sh0w/webcasting.git'
+set :repo_url, 'https://github.com/sh0w/webcasting.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/var/www/webcasting'
-
+set :ssh_options, {
+    verbose: :debug
+}
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -18,6 +20,7 @@ set :deploy_to, '/var/www/webcasting'
 
 # Default value for :log_level is :debug
 # set :log_level, :debug
+set :log_level, :debug
 
 # Default value for :pty is false
 # set :pty, true
