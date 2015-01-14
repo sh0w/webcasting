@@ -3,15 +3,14 @@ require 'capistrano/setup'
 
 # Includes default deployment tasks
 require 'capistrano/deploy'
-
+require 'capistrano/rails'
 #
  require 'capistrano/rvm'
- set :rvm_type, :local_user
- set :rvm_ruby_version, '1.9.3p484'
+ set :rvm_type, :user
+ set :rvm_ruby_version, '1.9.3-p551'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
- require 'capistrano/bundler'
- require 'capistrano/rails'
+
 # require 'capistrano/rails/assets'
 # require 'capistrano/rails/migrations'
 
