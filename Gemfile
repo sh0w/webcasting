@@ -24,7 +24,7 @@ group :development do
   gem 'sqlite3'
 end
 group :production do
-  gem 'mysql2'
+  gem 'pg'
   gem 'rails_12factor'
 
 end
@@ -46,14 +46,22 @@ end
 # gem 'debugger'
 
 gem 'devise'
+
 #gem 'libv8', '3.16.14.3'
 gem 'therubyracer'
+
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem 'haml-rails'
+
 gem 'mailboxer'
+
 gem "paperclip", "~> 3.0"
+
 gem "simple_form"
+
 gem "acts_as_votable"
+
 ruby '1.9.3'
+
 gem 'bootstrap-datepicker-rails'
