@@ -82,8 +82,11 @@ class UsersController < ApplicationController
     #show all conversations (not just the inbox)
     @my_conversations = current_user.mailbox.inbox.find(:all, :order => "updated_at")
     @my_conversations.concat(current_user.mailbox.sentbox.find(:all, :order => "updated_at"))
-    @my_conversations = @my_conversations.sort_by(&:updated_at).reverse
-    @my_conversations.first.mark_as_read(current_user)
+
+    if not @my_conversations.empty?
+      @my_conversations = @my_conversations.sort_by(&:updated_at).reverse
+      @my_conversations.first.mark_as_read(current_user)
+    end
   end
 
   def like

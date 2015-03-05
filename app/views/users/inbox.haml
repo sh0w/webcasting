@@ -3,7 +3,7 @@
     = link_to "Your Account", current_user
     &gt; Messages
 - if @my_conversations.empty?
-  %h3.text-center.col-sm-12= "You don't have any messages!"
+  %h3.text-center.col-sm-12= "You don't have any messages yet!"
 - else
   #inbox
     - sort_array = Array.new()
