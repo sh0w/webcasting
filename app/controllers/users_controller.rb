@@ -12,7 +12,7 @@ class UsersController < ApplicationController
                          country LIKE ? OR
                          description LIKE ? OR
                          skills LIKE ? OR
-                         email LIKE ?",
+                         email LIKE ? AND users.name NOT NULL",
                          query,query,query,query,query,query,query).all
   end
 
@@ -29,7 +29,8 @@ class UsersController < ApplicationController
                            country LIKE ? OR
                            description LIKE ? OR
                            skills LIKE ? OR
-                           email LIKE ?",
+                           email LIKE ? AND
+                           users.name NOT NULL",
                                                         query,query,query,query,query,query,query).limit(10)
       else
         #@user_list = User.includes(:universities).where(User.arel_table[:id].not_in([params[:id],current_user.id])).limit(10)
