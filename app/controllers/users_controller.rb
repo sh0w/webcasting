@@ -12,7 +12,7 @@ class UsersController < ApplicationController
                          country LIKE ? OR
                          description LIKE ? OR
                          skills LIKE ? OR
-                         email LIKE ? AND users.name NOT NULL",
+                         email LIKE ? AND users.name IS NOT NULL",
                          query,query,query,query,query,query,query).all
   end
 
