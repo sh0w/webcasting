@@ -6,13 +6,13 @@ class UsersController < ApplicationController
   def search
     query = "%#{params[:q]}%"
 
-    @users = User.includes(:universities).where("universities.name LIKE ? OR
+    @users = User.includes(:universities).where("(universities.name LIKE ? OR
                          users.name LIKE ? OR
                          city LIKE ? OR
                          country LIKE ? OR
                          description LIKE ? OR
                          skills LIKE ? OR
-                         email LIKE ? AND users.name IS NOT NULL",
+                         email LIKE ?) AND users.name IS NOT NULL AND users.name <>''",
                          query,query,query,query,query,query,query).all
   end
 
@@ -23,14 +23,13 @@ class UsersController < ApplicationController
       if not params[:q].blank?
         query = "%#{params[:q]}%"
 
-        @user_list = User.includes(:universities).where("universities.name LIKE ? OR
+        @user_list = User.includes(:universities).where("(universities.name LIKE ? OR
                            users.name LIKE ? OR
                            city LIKE ? OR
                            country LIKE ? OR
                            description LIKE ? OR
                            skills LIKE ? OR
-                           email LIKE ? AND
-                           users.name NOT NULL",
+                           email LIKE ? ) AND users.name IS NOT NULL AND users.name <>''",
                                                         query,query,query,query,query,query,query).limit(10)
       else
         #@user_list = User.includes(:universities).where(User.arel_table[:id].not_in([params[:id],current_user.id])).limit(10)

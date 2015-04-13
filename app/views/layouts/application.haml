@@ -36,7 +36,10 @@
             - if user_signed_in?
               %li.dropdown
                 %a.dropdown-toggle(href='#'  data-toggle="dropdown")
-                  = current_user.name || current_user.email
+                  - if current_user.name.blank? || current_user.name.nil?
+                    = current_user.email
+                  - else
+                    = current_user.name
                   = content_tag(:span,"",class: "caret")
                   = content_tag(:span,current_user.mailbox.receipts.where(is_read:false).count,class: "unread") if current_user.mailbox.receipts.where(is_read:false).count != 0
                 %ul.dropdown-menu(role="menu")

@@ -5,6 +5,14 @@ class RegistrationsController < Devise::RegistrationsController
 
 # GET /resource/edit
   def edit
+    @user = User.find(current_user.id)
+
+    @show_in_search = "Please fill out your name to show up in our search results."
+
+    if not @user.name.blank?
+      @show_in_search = ""
+    end
+
     render :edit
   end
 # PUT /resource
@@ -12,8 +20,6 @@ class RegistrationsController < Devise::RegistrationsController
 # the current user in place.
 
   def update
-    @user = User.find(current_user.id)
-
 
     successfully_updated = if needs_password?(@user, params)
                              @user.update_with_password(devise_parameter_sanitizer.sanitize(:account_update))

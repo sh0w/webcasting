@@ -1,6 +1,9 @@
 .ps-content
   %h2
-    #{@show_user.name}
+    - if @show_user.name.blank? || @show_user.name.nil?
+      = @show_user.email
+    - else
+      = @show_user.name
     %br>/
     %span
       - if not @show_user.city.blank?

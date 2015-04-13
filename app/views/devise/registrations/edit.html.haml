@@ -3,6 +3,9 @@
     Your Account &gt; Edit Profile
 
 .container
+  .col-md-8.col-md-offset-2.info_text.text-center
+    = @show_in_search
+
   = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :multipart => true }) do |f|
     = devise_error_messages!
 

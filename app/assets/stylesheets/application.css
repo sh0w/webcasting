@@ -161,3 +161,8 @@ body > section:first-of-type {
     top: 26px;
     width: 10px;
 }
+
+.info_text{
+    padding: 20px 10px;
+    font-weight:bold;
+}
