@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-$('#userlist').masonry()
+$('#grid').masonry()
 
 $ ->
  $('#messages').animate({ scrollTop: $(document).height() }, 0) if $("#messages").length > 0
