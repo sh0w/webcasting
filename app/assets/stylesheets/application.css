@@ -166,3 +166,18 @@ body > section:first-of-type {
     padding: 20px 10px;
     font-weight:bold;
 }
+
+@media screen and (max-width: 1200px) {
+    #menu a  {
+        font-size: 1.1em;
+    }
+    .page-header {
+        top: 58px !important;
+    }
+    .dropdown-menu {
+        top: 58px !important;
+    }
+    .page-header {
+        height: 57px !important;
+    }
+}

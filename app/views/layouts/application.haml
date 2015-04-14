@@ -37,9 +37,9 @@
               %li.dropdown
                 %a.dropdown-toggle(href='#'  data-toggle="dropdown")
                   - if current_user.name.blank? || current_user.name.nil?
-                    = current_user.email
+                    = raw truncate(current_user.email, :length => 30, :omission => '... ')
                   - else
-                    = current_user.name
+                    = raw truncate(current_user.name, :length => 30, :omission => '... ')
                   = content_tag(:span,"",class: "caret")
                   = content_tag(:span,current_user.mailbox.receipts.where(is_read:false).count,class: "unread") if current_user.mailbox.receipts.where(is_read:false).count != 0
                 %ul.dropdown-menu(role="menu")

@@ -1,7 +1,12 @@
+$break-large: 1200px
+
 #search-bar
 
   .search_form
     padding: 11px 0
+    @media screen and (max-width: $break-large)
+      padding: 9px 0
+
   input
     line-height: 1.2em
     font-size: 1.5em
@@ -19,9 +24,14 @@
       background: white
       color: #e8a19b
 
+      @media screen and (max-width: $break-large)
+        height: 31px
+
+
     &[type="submit"]
       padding: 5px 20px
-
+    @media screen and (max-width: $break-large)
+      font-size: 1.1em
 
 
   ::-webkit-input-placeholder
