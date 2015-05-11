@@ -17,7 +17,7 @@
       /= f.label :email
       = f.email_field :email, :class => 'hidden'
 
-      = f.association :universities, as: :select
+      /= f.association :universities, as: :select
 
       = f.label :name
       = f.text_field :name, autofocus: true
@@ -25,8 +25,8 @@
       = f.label :city
       = f.text_field :city
 
-      = f.label :country
-      = f.text_field :country
+      /= f.label :country
+      /= f.text_field :country
 
       = f.input :birthdate, :as => 'string', :input_html => { :data => {:provide => :datepicker, :"date-format" => :"yyyy-mm-dd" } }
       /= f.input :birthdate, :as => :string, :input_html => { :data-provide => 'datepicker' }
@@ -35,7 +35,7 @@
       = f.text_field :website
 
     .col-md-6
-      = f.label :description
+      = f.label :description, :label => "About myself"
       = f.text_area :description
 
       = f.label :skills
