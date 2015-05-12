@@ -34,12 +34,14 @@
       = f.label :website
       = f.text_field :website, :placeholder => "Do you have a website with your work on it?"
 
-      = f.label :skills
-      = f.text_area :skills, :placeholder => "Which skills do you offer / want to train? (Please separate with comma)"
+      = f.input :description, label: "About myself", input_html: { class: 'wysihtml5' }, label_html: { class: 'wysiwg_label' }, :placeholder => "Small biography of yourself."
 
     .col-md-6
       /= f.label :description,
-      = f.input :description, label: "About myself", input_html: { class: 'wysihtml5' }, label_html: { class: 'wysiwg_label' }, :placeholder => "Small biography of yourself."
+      = f.association :skills, as: :check_boxes, wrapper_html: { class: 'clearfix' }
+
+      = f.label :moreskills, label: "Other skills"
+      = f.text_area :moreskills, :placeholder => "Which skills do you offer / want to train? (Please separate with comma)"
 
       = f.label :looking_for
       = f.text_area :looking_for, :placeholder => "In what kind of projects are you interested?"

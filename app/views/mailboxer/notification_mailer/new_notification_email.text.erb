@@ -1,0 +1,7 @@
+You have a new notification!
+
+-----------------------------------------------
+<%= @notification.body.html_safe? ? @notification.body : strip_tags(@notification.body) %>
+-----------------------------------------------
+
+Visit <%= 'http://www.coact.ufg.at' %> and go to your notifications for more info.

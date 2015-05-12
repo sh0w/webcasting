@@ -5,30 +5,43 @@ class UsersController < ApplicationController
 
   def search
     query = "%#{params[:q]}%"
+    @got_used = params[:skills_arr]
 
-    @users = User.includes(:universities).where("(universities.name LIKE ? OR
-                         users.name LIKE ? OR
+    @skills = Skill.all
+
+    if @got_used.nil?
+      @users = User.where("(users.name LIKE ? OR
                          city LIKE ? OR
                          country LIKE ? OR
                          description LIKE ? OR
-                         skills LIKE ? OR
+                         moreskills LIKE ? OR
                          email LIKE ?) AND users.name IS NOT NULL AND users.name <>''",
-                         query,query,query,query,query,query,query).all
+                                            query,query,query,query,query,query)
+    else
+      @users = User.includes(:skills).where("(users.name LIKE ? OR
+                         city LIKE ? OR
+                         country LIKE ? OR
+                         description LIKE ? OR
+                         moreskills LIKE ? OR
+                         email LIKE ?) AND users.name IS NOT NULL AND users.name <>'' AND skills.id IN (?)",
+                               query,query,query,query,query,query,Skill.find(@got_used))
+    end
+
   end
 
   def show
-    @user = User.find(params[:id], :include => :universities)
+    @user = User.find(params[:id], :include => :skills)
 
     if params[:id].to_i != current_user.id.to_i
       if not params[:q].blank?
         query = "%#{params[:q]}%"
 
-        @user_list = User.includes(:universities).where("(universities.name LIKE ? OR
+        @user_list = User.includes(:skills).where("(skills.name LIKE ? OR
                            users.name LIKE ? OR
                            city LIKE ? OR
                            country LIKE ? OR
                            description LIKE ? OR
-                           skills LIKE ? OR
+                           moreskills LIKE ? OR
                            email LIKE ? ) AND users.name IS NOT NULL AND users.name <>''",
                                                         query,query,query,query,query,query,query).limit(10)
       else

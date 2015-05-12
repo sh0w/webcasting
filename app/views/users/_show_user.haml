@@ -19,10 +19,10 @@
       %span About myself
       = raw @show_user.description
 
-  - if not @show_user.skills.blank?
+  - if not @show_user.moreskills.blank?
     %p
       %span Skills
-      =@show_user.skills
+      =@show_user.moreskills
 
   - if not @show_user.looking_for.blank?
     %p

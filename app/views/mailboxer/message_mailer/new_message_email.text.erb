@@ -1,0 +1,7 @@
+You have a new message!
+
+-----------------------------------------------
+<%= @message.body.html_safe? ? @message.body : strip_tags(@message.body) %>
+-----------------------------------------------
+
+Visit <%= 'http://www.coact.ufg.at' %> and go to your inbox for more info.

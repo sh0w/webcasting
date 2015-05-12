@@ -1,6 +1,7 @@
 class ConversationsController < ApplicationController
   before_filter :authenticate_user!
   helper_method :mailbox, :conversation
+
   def create
 
     #recipient_emails = conversation_params(:recipients).split(',')
@@ -8,15 +9,17 @@ class ConversationsController < ApplicationController
 
     recipient = User.find(conversation_params(:recipient).to_i)
 
-    if current_user.send_message(recipient, *conversation_params(:body), "subject")
+    if current_user.send_message(recipient, *conversation_params(:body), "New Message")
       redirect_to inbox_path
     else
       render :text => "problem".inspect
     end
   end
+
   def index
     @conversations ||= current_user.mailbox.inbox.all
   end
+
   def addForm
 
     @user = User.find(params[:id])
@@ -54,6 +57,7 @@ class ConversationsController < ApplicationController
     current_user.reply_to_conversation(conversation, *message_params(:body))
     #redirect_to conversation_path(conversation)
     redirect_to inbox_path
+
   end
   def trash
     conversation.move_to_trash(current_user)
