@@ -20,10 +20,10 @@
       /= f.association :universities, as: :select
 
       = f.label :name
-      = f.text_field :name, autofocus: true
+      = f.text_field :name, autofocus: true, :placeholder => "Please fill out to be visible in the search"
 
       = f.label :city
-      = f.text_field :city
+      = f.text_field :city, :placeholder => "In which cities are you staying most of the time?"
 
       /= f.label :country
       /= f.text_field :country
@@ -32,19 +32,19 @@
       /= f.input :birthdate, :as => :string, :input_html => { :data-provide => 'datepicker' }
 
       = f.label :website
-      = f.text_field :website
+      = f.text_field :website, :placeholder => "Do you have a website with your work on it?"
 
       = f.label :skills
-      = f.text_area :skills
+      = f.text_area :skills, :placeholder => "Which skills do you offer / want to train? (Please separate with comma)"
 
     .col-md-6
       /= f.label :description,
-      = f.input :description, label: "About myself", input_html: { class: 'wysihtml5' }, label_html: { class: 'wysiwg_label' }
+      = f.input :description, label: "About myself", input_html: { class: 'wysihtml5' }, label_html: { class: 'wysiwg_label' }, :placeholder => "Small biography of yourself."
 
       = f.label :looking_for
-      = f.text_area :looking_for
+      = f.text_area :looking_for, :placeholder => "In what kind of projects are you interested?"
 
-      = f.input :recent_projects, label: "Recent projects", input_html: { class: 'wysihtml5' }, label_html: { class: 'wysiwg_label' }
+      = f.input :recent_projects, label: "Recent projects", input_html: { class: 'wysihtml5' }, label_html: { class: 'wysiwg_label' }, :placeholder => "Have you already done some projects?"
 
       -if devise_mapping.confirmable? && resource.pending_reconfirmation?
         Currently waiting confirmation for:

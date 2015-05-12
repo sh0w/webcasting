@@ -93,7 +93,6 @@
 
 .ps-content a {
     font-weight: 700;
-    text-decoration: underline;
 }
 
 .ps-content > a:last-child {
@@ -103,7 +102,6 @@
 	border: 0;
 	padding: 10px;
 	text-indent: 4px;
-    text-decoration: none;
 }
 
 .wysiwg_label{
