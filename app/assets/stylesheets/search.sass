@@ -3,9 +3,18 @@ $break-large: 1200px
 #search-bar
 
   .search_form
-    padding: 11px 0
+    padding: 10px 0
+    margin-bottom: 0
     @media screen and (max-width: $break-large)
       padding: 9px 0
+
+  .skills_box
+    display: inline-block
+    padding-top: 8px
+
+  label
+    float: left
+    margin-right: 10px
 
   input
     line-height: 1.2em
@@ -17,6 +26,12 @@ $break-large: 1200px
     margin: 5px
     border-radius: 0px
     text-transform: uppercase
+
+    &[type="checkbox"]
+      float: left
+      margin-top: 4px
+      margin-bottom: 5px
+      margin-right: 2px
 
     &[type="text"]
       height: 37px

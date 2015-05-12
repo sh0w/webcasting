@@ -1,0 +1,6 @@
+en:
+  mailboxer:
+    message_mailer:
+      subject_new: "Coact: You got mail!"
+      subject_reply: "Coact: You got mail!"
+      #subject_reply: "New Reply: %{subject}"
