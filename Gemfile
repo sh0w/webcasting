@@ -21,10 +21,10 @@ gem 'jquery-rails'
 
 
 group :development do
-  gem 'sqlite3'
+#  gem 'sqlite3'
 end
 group :production do
-  gem 'pg'
+#  gem 'pg'
   gem 'rails_12factor'
 
 end
@@ -48,7 +48,8 @@ end
 gem 'devise'
 
 #gem 'libv8', '3.16.14.3'
-gem 'therubyracer'
+gem 'therubyracer', '~> 0.11.4'
+gem "node"
 
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
@@ -65,3 +66,9 @@ gem "acts_as_votable"
 ruby '1.9.3'
 
 gem 'bootstrap-datepicker-rails'
+
+gem 'yaml_db', '~> 0.3.0'
+
+gem 'mysql2'
+
+gem 'bootstrap-wysihtml5-rails'
