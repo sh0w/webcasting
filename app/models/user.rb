@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :description, :city, :country, :name, :image, :university_name, :birthdate, :sex, :looking_for, :moreskills, :website, :recent_projects
-  attr_accessible :university_id, :skill_id
+  attr_accessible :university_ids, :skill_ids
 
   has_attached_file :image, :styles => { :medium => "300x300#", :thumb => "60x60#" }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
