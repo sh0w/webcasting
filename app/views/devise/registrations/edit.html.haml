@@ -34,18 +34,17 @@
       = f.label :website
       = f.text_field :website
 
-    .col-md-6
-      = f.label :description, :label => "About myself"
-      = f.text_area :description
-
       = f.label :skills
       = f.text_area :skills
+
+    .col-md-6
+      /= f.label :description,
+      = f.input :description, label: "About myself", input_html: { class: 'wysihtml5' }, label_html: { class: 'wysiwg_label' }
 
       = f.label :looking_for
       = f.text_area :looking_for
 
-      = f.label :recent_projects
-      = f.text_area :recent_projects
+      = f.input :recent_projects, label: "Recent projects", input_html: { class: 'wysihtml5' }, label_html: { class: 'wysiwg_label' }
 
       -if devise_mapping.confirmable? && resource.pending_reconfirmation?
         Currently waiting confirmation for:
@@ -54,3 +53,22 @@
       = f.submit "Update", :class => 'btn-send'
       %p
         = link_to "Cancel Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => 'delete-i-with-text'
+
+:javascript
+  $(document).ready( function() {
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5({
+                          toolbar: {
+                            "font-styles": false, //Font styling, e.g. h1, h2, etc. Default true
+                            "emphasis": true, //Italics, bold, etc. Default true
+                            "lists": false, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+                            "html": false, //Button which allows you to edit the generated HTML. Default false
+                            "link": true, //Button to insert a link. Default true
+                            "image": true, //Button to insert an image. Default true,
+                            "color": false, //Button to change color of font
+                            "blockquote": false, //Blockquote
+                            "size": 'xs' //default: none, other options are xs, sm, lg
+                          }
+                        });
+    });
+  } );

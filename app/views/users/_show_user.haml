@@ -17,7 +17,7 @@
   - if not @show_user.description.blank?
     %p
       %span About myself
-      =@show_user.description
+      = raw @show_user.description
 
   - if not @show_user.skills.blank?
     %p
@@ -32,7 +32,7 @@
   - if not @show_user.recent_projects.blank?
     %p
       %span Recent projects
-      =@show_user.recent_projects
+      = raw @show_user.recent_projects
 
   - if not @show_user.website.blank?
     =link_to "Website", @show_user.website, target: "_blank"

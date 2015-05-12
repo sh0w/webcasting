@@ -12,10 +12,12 @@
 //
 // require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//#= require twitter/bootstrap
 //= require masonry.pkgd.min
 //= require modernizr.custom.79639
 //= require slider
 //= require snap.svg-min.js
-//= require bootstrap-datepicker
+//#= require bootstrap-datepicker
+//#= require bootstrap-wysihtml5
+//#= require bootstrap-wysihtml5/locales/
 //= require_tree .

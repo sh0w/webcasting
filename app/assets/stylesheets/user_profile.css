@@ -91,18 +91,24 @@
     font-weight: 700;
 }
 
+.ps-content a {
+    font-weight: 700;
+    text-decoration: underline;
+}
 
-
-.ps-content a:last-child {
+.ps-content > a:last-child {
 	font-size: 14px;
-	font-weight: 700;
 	letter-spacing: 4px;
 	float: right;
 	border: 0;
 	padding: 10px;
 	text-indent: 4px;
+    text-decoration: none;
 }
 
+.wysiwg_label{
+    float:left;
+}
 
 .btn-primary{
     background-color:#8DAAB4;
