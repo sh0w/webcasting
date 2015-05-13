@@ -21,10 +21,10 @@ gem 'jquery-rails'
 
 
 group :development do
-  gem 'sqlite3'
+  #gem 'sqlite3'
 end
 group :production do
-  gem 'pg'
+  #gem 'pg'
   gem 'rails_12factor'
 
 end
@@ -65,3 +65,9 @@ gem "acts_as_votable"
 ruby '1.9.3'
 
 gem 'bootstrap-datepicker-rails'
+
+gem 'yaml_db', '~> 0.3.0'
+
+gem 'mysql2'
+
+gem 'bootstrap-wysihtml5-rails'
