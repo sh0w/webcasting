@@ -15,7 +15,7 @@ development:
   database: webcasting
   pool: 5
   username: root
-  password:
+  password: webcastingdatenbankpasswort
 
 production:
   adapter: mysql2
@@ -23,4 +23,4 @@ production:
   database: webcasting
   pool: 5
   username: root
-  password:
+  password: webcastingdatenbankpasswort
