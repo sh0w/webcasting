@@ -16,6 +16,6 @@
   - if not user.id == current_user.id
     .like
       - if current_user.voted_as_when_voted_for user
-        = link_to "", unlike_path(user.id), :class => 'unlike-i', :title => 'Undo prebook'
+        = link_to "", unlike_path(user.id), :class => 'unlike-i', :title => "Don't remember"
       - else
-        = link_to "", like_path(user.id), :class => 'like-i', :title => 'Prebook'
+        = link_to "", like_path(user.id), :class => 'like-i', :title => 'Remember'

@@ -1,16 +1,17 @@
 #search-bar.page-header
   = form_tag("/search", method: "get", class: "search_form") do
-    .row
+    %div
       = text_field_tag :q, params[:q], :placeholder => "Search users..."
       = submit_tag("Search")
     .skills_box.container
       - @skills.each do |s|
-        - if !@got_used.nil? and @got_used.include? s.id.to_s
-          %input{:type=>"checkbox", :id => s.name, :name=>"skills_arr[]", :value=>s.id, :checked =>  'checked'}
-        - else
-          %input{:type=>"checkbox", :name=>"skills_arr[]", :value=>s.id}
-        %label{:for=> s.name}
-          = s.name
+        .skill_list
+          - if !@got_used.nil? and @got_used.include? s.id.to_s
+            %input{:type=>"checkbox", :id => s.name, :name=>"skills_arr[]", :value=>s.id, :checked =>  'checked'}
+          - else
+            %input{:type=>"checkbox", :name=>"skills_arr[]", :value=>s.id}
+          %label{:for=> s.name}
+            = s.name
 
 
 #grid.grid.clearfix
