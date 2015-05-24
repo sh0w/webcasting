@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150111183554) do
+ActiveRecord::Schema.define(:version => 20150512134758) do
 
   create_table "mailboxer_conversation_opt_outs", :force => true do |t|
     t.integer "unsubscriber_id"
@@ -77,6 +77,19 @@ ActiveRecord::Schema.define(:version => 20150111183554) do
 
   add_index "posts", ["user_id"], :name => "index_blackboard_posts_on_user_id"
 
+  create_table "skills", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "skills_users", :force => true do |t|
+    t.integer  "skill_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "students", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -120,7 +133,7 @@ ActiveRecord::Schema.define(:version => 20150111183554) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "skills"
+    t.string   "moreskills"
     t.string   "website"
     t.text     "recent_projects"
   end
