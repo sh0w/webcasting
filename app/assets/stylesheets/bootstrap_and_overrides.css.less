@@ -160,3 +160,39 @@ label {
 #edit_user .user_skills input {
   margin-bottom: 0 !important;
 }
+.navbar-inverse .btn-navbar {
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+  border-color: transparent;
+}
+
+.navbar-inverse .btn-navbar:hover, .navbar-inverse .btn-navbar:focus, .navbar-inverse .btn-navbar:active, .navbar-inverse .btn-navbar.active, .navbar-inverse .btn-navbar.disabled, .navbar-inverse .btn-navbar[disabled] {
+  background-color: transparent;
+}
+
+.navbar-inverse .btn-navbar:hover .icon-bar,
+.navbar-inverse .btn-navbar:focus .icon-bar,
+.navbar-inverse .btn-navbar:active .icon-bar,
+.navbar-inverse .btn-navbar.active .icon-bar,
+.navbar-inverse .btn-navbar.disabled .icon-bar,
+.navbar-inverse .btn-navbar[disabled] .icon-bar {
+  background-color: #555555;
+}
+
+.navbar .btn-navbar {
+  box-shadow: none;
+}
+
+@media (max-width: 979px) {
+  .navbar-fixed-top, .navbar-fixed-bottom {
+    position: fixed;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
