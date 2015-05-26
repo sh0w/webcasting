@@ -6,7 +6,10 @@
       %figcaption
         %h2.name= user.name || "No name"
         %p.info
-          = raw truncate(user.moreskills, :length => 90, :omission => '... ')
+          - if user.skills.blank?
+            = raw truncate(user.moreskills, :length => 90, :omission => '... ')
+          - else
+            = raw truncate(user.skills.collect { |s| s.name }.join(", "),:length => 90, :omission => '... ')
           %br
           %br
           - if not user.city.blank? and not user.country.blank?

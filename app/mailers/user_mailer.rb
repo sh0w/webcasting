@@ -1,3 +1,3 @@
 class UserMailer < ActionMailer::Base
-  default from: "no-reply@coact.ufg.at"
+  default from: "noreply_coact@ufg.at"
 end
