@@ -22,6 +22,11 @@
   - if not @show_user.moreskills.blank?
     %p
       %span Skills
+      - if !@show_user.skills.blank?
+        = @show_user.skills.collect { |s| s.name }.join(", ")
+        %br
+        %br
+        %span More skills
       =@show_user.moreskills
 
   - if not @show_user.looking_for.blank?
