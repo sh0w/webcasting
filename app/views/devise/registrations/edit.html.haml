@@ -10,9 +10,15 @@
     = devise_error_messages!
 
     .col-md-6
-      = image_tag @user.image.url(:thumb)
+
+      - if @user.image.url(:thumb) == "/images/thumb/missing.png"
+        %p.tip
+          Please upload at least one nice picture of yourself.
+      - else
+        = image_tag @user.image.url(:thumb)
       /= image_tag '/images/thumb/missing.png'
       = f.file_field :image
+
 
       /= f.label :email
       = f.email_field :email, :class => 'hidden'

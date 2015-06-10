@@ -157,7 +157,8 @@ body > section:first-of-type {
     background-repeat: no-repeat;
     background-size: 50% auto;
     display: block;
-    min-height: 16%;
+    height: 16%;
+    min-height: 140px;
     margin: 5% auto 0;
     width: 100%;
 }
@@ -196,6 +197,11 @@ body > section:first-of-type {
 .info_text{
     padding: 20px 10px;
     font-weight:bold;
+}
+
+.tip{
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 @media screen and (max-width: 1200px) {
