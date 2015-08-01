@@ -150,6 +150,31 @@ body > section:first-of-type {
 .unlike-i:hover {
     background-image: url("mark.png");
 }
+
+.intro {
+    background-image: url("COACT_signuppage.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    display: block;
+    height: 16%;
+    min-height: 140px;
+    margin: 5% auto 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .intro {
+        background-size: 70% auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .intro {
+        background-size: 90% auto;
+    }
+}
+
 #menu a > .unread{
     bottom: 23px;
     color: #d77d7b;
@@ -172,6 +197,11 @@ body > section:first-of-type {
 .info_text{
     padding: 20px 10px;
     font-weight:bold;
+}
+
+.tip{
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 @media screen and (max-width: 1200px) {

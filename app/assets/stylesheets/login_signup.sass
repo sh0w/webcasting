@@ -1,3 +1,8 @@
+$break-large: 1200px
+$break-medium: 1024px
+$break-small: 767px
+$break-xsmall: 480px
+
 .loginform, .signupform, .forgotpassword
   width: 400px
   margin: 100px auto
@@ -5,6 +10,9 @@
   text-align: center
   padding: 10px 0px
 
+  @media screen and (max-width: $break-xsmall)
+    margin: 10px 0
+    width: 100%
 
   h2
     display: none
@@ -17,6 +25,11 @@
     border-radius: 0px
     height: 40px
 
+    @media screen and (max-width: $break-xsmall)
+      height: 35px
+      margin: 5px 0
+      width: 90%
+
   input[type="submit"]
     width: 350px
     margin: 10px 20px 0px
@@ -27,8 +40,16 @@
     text-transform: uppercase
     font-size: 1.7em
 
+    @media screen and (max-width: $break-xsmall)
+      margin: 5px 0
+      width: 90%
+      font-size: 1.2em
+      padding: 8px
+
   form
     margin: 5px 0 20px
+    @media screen and (max-width: $break-xsmall)
+      margin: 5px 0
 
 #error_explanation
   ul
