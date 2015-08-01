@@ -17,7 +17,10 @@
 //= require modernizr.custom.79639
 //= require slider
 //= require snap.svg-min.js
-//#= require bootstrap-datepicker
-//#= require bootstrap-wysihtml5
-//#= require bootstrap-wysihtml5/locales/
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.de.js
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.en-GB.js
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales/de-DE
+//= require bootstrap-wysihtml5/locales/en-US
 //= require_tree .

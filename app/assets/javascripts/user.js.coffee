@@ -2,8 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-$('#grid').masonry()
-
 $ ->
  $('#messages').animate({ scrollTop: $(document).height() }, 0) if $("#messages").length > 0
 
@@ -25,4 +23,5 @@ $ ->
  ).on "ajax:error", (e, xhr, status, error) ->
    $('#ps-container').parent().html(xhr.responseText)
 
+ $('#grid').masonry()
  Slider.init() if $(".ps-prev").length > 0
