@@ -23,9 +23,8 @@ gem 'jquery-rails'
 group :development do
   #gem 'sqlite3'
 end
-
 group :production do
-#  gem 'pg'
+  #gem 'pg'
   gem 'rails_12factor'
 
 end
@@ -49,8 +48,7 @@ end
 gem 'devise'
 
 #gem 'libv8', '3.16.14.3'
-gem 'therubyracer', '~> 0.11.4'
-gem "node"
+gem 'therubyracer'
 
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"

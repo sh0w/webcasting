@@ -6,9 +6,6 @@ set :repo_url, 'https://github.com/sh0w/webcasting.git'
 set :repository, 'https://github.com/sh0w/webcasting.git'
 
 
-
-
-
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
