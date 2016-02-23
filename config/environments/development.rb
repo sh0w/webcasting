@@ -23,27 +23,14 @@ Webcasting::Application.configure do
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.default :from => 'noreply_coact@ufg.at'
 
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.smtp_settings = {
-      address:              'smtp.office365.com',
-      port:                 587,
-      domain:               'owa.ufg.ac.at',
+      address:              'ZIM-01.dmz.ufg.ac.at',
       user_name:            'noreply_coact@ufg.at',
       password:             'wHttf837i0iaEx18t3N',
-      authentication:       'login',
-      openssl_verify_mode: 'none',
+      authentication:       'plain',
       enable_starttls_auto: true
   }
-  #config.action_mailer.smtp_settings = {
-  #    address:              'smtp.gmail.com',
-  #    port:                 587,
-  #    domain:               'gmail.com',
-  #    user_name:            'katharina.gruber1@gmail.com',
-  #    password:             'chillychilly',
-  #    authentication:       'plain',
-  #    enable_starttls_auto: true
-  #}
-
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
