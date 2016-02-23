@@ -14,7 +14,7 @@ Webcasting::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.default_url_options = {host: 'localhost:3000'}
   config.action_mailer.perform_deliveries = true
@@ -24,13 +24,10 @@ Webcasting::Application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      address:              'smtp.office365.com',
-      port:                 587,
-      domain:               'owa.ufg.ac.at',
+      address:              'ZIM-01.dmz.ufg.ac.at',
       user_name:            'noreply_coact@ufg.at',
       password:             'wHttf837i0iaEx18t3N',
       authentication:       'login',
-      openssl_verify_mode: 'none',
       enable_starttls_auto: true
   }
   #config.action_mailer.smtp_settings = {
