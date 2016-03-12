@@ -166,12 +166,14 @@ body > section:first-of-type {
 .intro {
     display: block;
     height: 16%;
-    min-height: 140px;
+    line-height: 100px;
+    font-size: 100px;
     margin: 5% auto 0;
-    width: 100%;
+    max-width: 470px;
+    text-align: center
 }
 
-.intro {
+.intro span{
     font-size: 32px;
     line-height: 0px;
 }
