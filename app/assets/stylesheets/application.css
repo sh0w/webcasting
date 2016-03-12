@@ -178,7 +178,7 @@ body > section:first-of-type {
 }
 .intro span{
     font-size: 32px;
-    line-height:38px
+    line-height:50px;
     display: block;
     font-weight: normal;
 }
