@@ -121,9 +121,6 @@
 /* Let's redefine the width of each anchor and the margins */
 
 @media screen and (max-width: 58em) {
-	.grid .user_box {
-		width: 33.333%;
-	}
 
 	.grid > div:nth-child(odd) {
 		margin: 0;
@@ -135,13 +132,6 @@
 }
 
 @media screen and (max-width: 45em) {
-	.grid {
-		max-width: 500px;
-	}
-
-	.grid .user_box {
-		width: 50%;
-	}
 
 	.grid > div:nth-child(3n-1) {
 		margin: 0;
@@ -165,13 +155,6 @@
 }
 
 @media screen and (max-width: 27em) {
-	.grid {
-		max-width: 250px;
-	}
-
-	.grid .user_box {
-		width: 100%;
-	}
 
 	.grid > div:nth-child(even) {
 		margin: 0;
