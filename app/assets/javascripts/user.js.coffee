@@ -23,5 +23,5 @@ $ ->
  ).on "ajax:error", (e, xhr, status, error) ->
    $('#ps-container').parent().html(xhr.responseText)
 
- $('#grid').masonry()
+ #$('#grid').masonry()
  Slider.init() if $(".ps-prev").length > 0
