@@ -136,6 +136,10 @@ body > section:first-of-type {
    float: right;
 }
 
+.like{
+    background-color: #fff
+}
+
 .like-i {
     background-image: url("mark.png");
     background-repeat: no-repeat;
@@ -153,7 +157,6 @@ body > section:first-of-type {
     width: 35px;
     height: 35px;
     float: right;
-    margin-right: 5px;
 }
 .unlike-i:hover {
     background-image: url("mark.png");
