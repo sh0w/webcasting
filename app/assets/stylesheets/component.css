@@ -44,8 +44,8 @@
 	margin: 0 0 5px 0;
 	text-transform: uppercase;
 	font-size: 1.5em;
-	-webkit-transition: -webkit-transform 0.2s;
-	transition: transform 0.2s;
+	-webkit-transition: -webkit-transform 0.1s;
+	transition: transform 0.1s;
     line-height: 26px;
     color: #000;
 }
