@@ -45,11 +45,13 @@
 	-webkit-transition: -webkit-transform 0.2s;
 	transition: transform 0.2s;
     line-height: 26px;
+    color: #000;
 }
 
 .grid figcaption p {
 	padding: 0 20px;
 	font-weight: 300;
+    color: #000;
 	-webkit-transition: opacity 0.1s, -webkit-transform 0.1s;
 	transition: opacity 0.1s, transform 0.1s;
 }
