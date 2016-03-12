@@ -175,9 +175,8 @@ body > section:first-of-type {
 
 .intro span{
     font-size: 32px;
-    line-height: 0px;
+    line-height: 38px;
     display: block;
-    padding-top: 20px;
 }
 
 @media screen and (max-width: 1024px) {
