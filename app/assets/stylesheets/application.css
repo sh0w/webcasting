@@ -70,8 +70,8 @@ h2{
 
 .alert {
     position: absolute;
-    left: 10px;
-    bottom: 80px;
+    right: 5%;
+    top: 80px;
 }
 
 body > .container-fluid,  body > .container-fluid > .row-fluid{
