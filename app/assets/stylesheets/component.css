@@ -42,12 +42,10 @@
 	margin: 0 0 5px 0;
 	color: #8DAAB4;
 	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 300;
 	font-size: 1.5em;
 	-webkit-transition: -webkit-transform 0.2s;
 	transition: transform 0.2s;
-    line-height: 28px;
+    line-height: 22px;
 }
 
 .grid figcaption p {

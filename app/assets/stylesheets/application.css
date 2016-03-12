@@ -61,6 +61,10 @@ body {
     margin:0;
 }
 
+h2{
+    font-weight: bold;
+}
+
 .alert {
     position: absolute;
     left: 10px;
