@@ -164,15 +164,16 @@ body > section:first-of-type {
 }
 
 .intro {
-    background-image: url("COACT_signuppage.svg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 50% auto;
     display: block;
     height: 16%;
     min-height: 140px;
     margin: 5% auto 0;
     width: 100%;
+}
+
+.intro {
+    font-size: 32px;
+    line-height: 0px;
 }
 
 @media screen and (max-width: 1024px) {
