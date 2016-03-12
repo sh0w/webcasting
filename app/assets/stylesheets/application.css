@@ -165,20 +165,22 @@ body > section:first-of-type {
 
 .intro {
     display: block;
-    height: 16%;
-    line-height: 140px;
-    font-size: 100px;
-    margin: 3% auto 0;
+    margin: 80px auto 0;
     max-width: 550px;
-    font-weight: bold;
     text-align: center
 }
-
+.intro h1{
+    font-size: 32px;
+    line-height: 140px;
+    font-weight: bold;
+    font-size: 100px;
+    font-weight: normal;
+}
 .intro span{
     font-size: 32px;
-    line-height:380px
+    line-height:38px
     display: block;
-    font-weight: normal;;
+    font-weight: normal;
 }
 
 @media screen and (max-width: 1024px) {
@@ -196,7 +198,6 @@ body > section:first-of-type {
 #menu a > .unread{
     bottom: 23px;
     color: #fff;
-    font-size: 16px;
     position: absolute;
     right: 36px;
 }
