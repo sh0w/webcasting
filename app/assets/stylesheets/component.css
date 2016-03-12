@@ -10,6 +10,13 @@
     padding: 0;
 }
 
+.grid .user_box .img_grid_box{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 275px;
+}
+
 .grid > div:nth-child(odd) {
 	/*margin: 30px 0 -30px 0;*/
 }
