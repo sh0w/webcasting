@@ -32,11 +32,11 @@
 
 .grid figcaption {
 	position: absolute;
-	top: 0;
+	bottom: 0;
 	z-index: 9;
 	padding: 10px;
 	width: 100%;
-	height: 100%;
+	height: 50%;
 	text-align: center;
 }
 
@@ -93,6 +93,7 @@
     left: -1px;
     -webkit-transition: height 0.2s;
     transition: height 0.2s;
+    transform: rotate(180deg);
 }
 
 .grid a:hover svg {
@@ -110,8 +111,8 @@
 
 .grid a:hover figcaption h2,
 .grid a:hover figcaption p {
-	-webkit-transform: translateY(-5px);
-	transform: translateY(-5px);
+	-webkit-transform: translateY(105px);
+	transform: translateY(105px);
 }
 
 .grid a:hover figcaption p {
