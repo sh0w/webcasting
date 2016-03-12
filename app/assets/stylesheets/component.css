@@ -1,11 +1,13 @@
 /* Common style */
 .grid {
-	margin: 40px auto 120px;
+	margin: 20px auto 120px;
 	width: 100%;
+    padding: 0 20px;
 }
 
 .grid .user_box {
 	color: #333;
+    padding: 0;
 }
 
 .grid > div:nth-child(odd) {
