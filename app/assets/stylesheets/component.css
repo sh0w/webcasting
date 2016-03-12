@@ -45,7 +45,7 @@
 	font-size: 1.5em;
 	-webkit-transition: -webkit-transform 0.2s;
 	transition: transform 0.2s;
-    line-height: 22px;
+    line-height: 26px;
 }
 
 .grid figcaption p {
@@ -58,8 +58,8 @@
 
 .grid figcaption h2,
 .grid figcaption p {
-	-webkit-transform: translateY(25px);
-	transform: translateY(25px);
+	-webkit-transform: translateY(10px);
+	transform: translateY(10px);
 }
 
 .grid figure button {
