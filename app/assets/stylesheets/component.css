@@ -1,14 +1,10 @@
 /* Common style */
 .grid {
 	margin: 40px auto 120px;
-	width: 90%;
+	width: 100%;
 }
 
 .grid .user_box {
-	float: left;
-	max-width: 280px;
-    min-width: 250px;
-	width: 25%;
 	color: #333;
 }
 
