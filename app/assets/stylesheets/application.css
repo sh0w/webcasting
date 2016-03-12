@@ -170,6 +170,7 @@ body > section:first-of-type {
     font-size: 100px;
     margin: 3% auto 0;
     max-width: 550px;
+    font-weight: bold;
     text-align: center
 }
 
@@ -177,6 +178,7 @@ body > section:first-of-type {
     font-size: 32px;
     line-height: 38px;
     display: block;
+    font-weight: normal;
 }
 
 @media screen and (max-width: 1024px) {
