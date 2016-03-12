@@ -23,12 +23,12 @@ Webcasting::Application.configure do
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.default :from => 'noreply_coact@ufg.at'
 
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.smtp_settings = {
       address:              'ZIM-01.dmz.ufg.ac.at',
       user_name:            'noreply_coact@ufg.at',
       password:             'wHttf837i0iaEx18t3N',
-      authentication:       'login',
+      authentication:       'plain',
       enable_starttls_auto: true
   }
 
