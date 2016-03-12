@@ -86,7 +86,7 @@
 /* Style for SVG */
 .grid svg {
 	position: absolute;
-	top: -1px; /* fixes rendering issue in FF */
+	bottom: -1px; /* fixes rendering issue in FF */
 	z-index: 8;
 	width: 101%;
 	height: 70%;
