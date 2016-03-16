@@ -9,6 +9,8 @@
         <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %></div>
 
       <div><%= f.submit "Log in"%></div>
+
+      = link_to "Forgot password?", new_password_path('user'), :class => "login-link"
     <% end %>
 
 </div>
