@@ -14,6 +14,7 @@ Webcasting::Application.routes.draw do
   match 'user/:id/message' => 'users#new_message', :as => :message
   match 'user/:id/show_message' => 'users#show_message', :as => :show_message
 
+  match '/users/password/new' => 'devise/passwords#new', :as => :new_user_password
   match 'conversation/:id/addForm' => 'conversations#addForm', :as => :addForm
 
   match 'user/:id/like' => 'users#like', :as => "like"
