@@ -60,6 +60,8 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+
+    UserMailer.send_blackboard_notification(@post).deliver
   end
 
   # PUT /posts/1

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body style="text-align:center; font-family: Helvetica, Arial, Sans-Serif; ">
+
+    <img src="http://www.coact.ufg.at/images/icons/COACT_signuppage.png" />
+
+    <blockquote style="font-size: 16px; line-height: 24px; background-color: #ffffff; margin: 30px auto; max-width: 600px;">
+
+        <h1>Hello <%= @user.name %>!</h1>
+        <p>There is a new entry on COACT'S <%= link_to "blackboard", black_board_path %>:</p>
+
+        <p>"<%= @post.title %>"</p>
+        <p>Maybe you wanna check it out :)</p>
+
+        <p style="font-size: 14px; margin: 30px 0;">
+             Visit <a href="http://www.coact.ufg.at" title="coact.ufg.at" style="color:#8DAAB4">Coact</a> for more information.
+        </p>
+    </blockquote>
+</body>
+</html>
