@@ -21,14 +21,17 @@
   %body
     %nav.navbar.navbar-fluid-top.navbar-inverse.navbar-fixed-top#menu
       .navbar-inner
-        %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.brand(href="/") Coact
-        .nav-collapse
+        .navbar-header
+          %button.navbar-toggle(data-target="#main-menu" data-toggle="collapse")
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %ul.nav
+            %li
+              %a.brand(href="/") Coact
+        .collapse.navbar-collapse#main-menu
           - if user_signed_in?
-            %ul.nav
+            %ul.nav.pull-left
               %li
                 = link_to "Black board", black_board_path
               %li

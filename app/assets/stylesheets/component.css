@@ -159,8 +159,6 @@
 
 	.grid figcaption h2 {
 		margin-bottom: 0px;
-		-webkit-transform: translateY(30px);
-		transform: translateY(30px);
 	}
 
 	.grid figcaption p {

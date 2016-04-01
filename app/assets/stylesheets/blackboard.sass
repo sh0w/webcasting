@@ -1,6 +1,10 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$break-large: 1200px
+$break-medium: 1024px
+$break-small: 768px
+$break-xsmall: 640px
 
 #blackboard
 
@@ -9,8 +13,8 @@
 
   .post
     width: 400px
-    float: left
     margin: 20px
+    float: left
     padding: 30px
     opacity: 0.8
     -webkit-transition: opacity 0.3s ease-in-out
@@ -19,6 +23,15 @@
     -o-transition: opacity 0.3s ease-in-out
     transition: opacity 0.3s ease-in-out
 
+    @media screen and (max-width: $break-large)
+      width: 31%
+      margin: 1%
+    @media screen and (max-width: $break-small)
+      width: 48%
+      margin: 1%
+    @media screen and (max-width: $break-xsmall)
+      width: 98%
+      margin: 1%
     .post-container
       clear: both
 

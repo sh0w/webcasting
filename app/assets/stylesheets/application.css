@@ -45,8 +45,16 @@ body {
     border-radius: 50%
 }
 
-#menu .navbar-inner li:hover, .brand:hover, .navbar-inverse .nav li.dropdown.open > .dropdown-toggle {
+#menu .navbar-inner li:hover, .brand:hover, .navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .nav > li > a:hover, .nav > li > a:focus {
     background: #9dcdc7 !important;
+}
+
+@media screen and (max-width: 768px) {
+    #main-menu{
+        background-color: #9DBFC8;
+        border: 0;
+        overflow: visible;
+    }
 }
 
 #menu a {
@@ -59,6 +67,13 @@ body {
     font-weight: 300;
     margin:0;
 }
+@media screen and (max-width: 768px) {
+    #menu a {
+        font-size: 1.2em;
+        padding: 10px 15px;
+        line-height: 2.75em;
+    }
+}
 
 .navbar-inverse .brand, .navbar-inverse .nav > li > a{
     text-shadow: none !important;
@@ -67,11 +82,18 @@ body {
 h2{
     font-weight: bold;
 }
+h2.special_blue{
+    color: hsl(173, 32%, 71%);
+    border-bottom: 2px solid hsl(173, 32%, 71%);
+    margin-bottom: 25px;
+    font-weight: normal;
+}
 
 .alert {
     position: absolute;
     right: 5%;
     top: 80px;
+    z-index: 1;
 }
 
 body > .container-fluid,  body > .container-fluid > .row-fluid{
@@ -170,7 +192,6 @@ body > section:first-of-type {
     text-align: center
 }
 .intro h1{
-    font-size: 32px;
     line-height: 140px;
     font-weight: bold;
     font-size: 100px;
@@ -183,17 +204,20 @@ body > section:first-of-type {
     font-weight: normal;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 640px) {
     .intro {
-        background-size: 70% auto;
+        margin: 40px 20px 0;
+    }
+    .intro h1 {
+        line-height: 75px;
+        font-size: 65px;
+    }
+    .intro span{
+        font-size: 24px;
+        line-height:34px;
     }
 }
 
-@media screen and (max-width: 767px) {
-    .intro {
-        background-size: 90% auto;
-    }
-}
 
 #menu a > .unread{
     bottom: 23px;
@@ -223,23 +247,7 @@ body > section:first-of-type {
     text-transform: uppercase;
 }
 
-@media screen and (max-width: 1200px) {
-    #menu a  {
-        font-size: 1.1em;
-    }
-    .dropdown-menu {
-        top: 58px !important;
-    }
-    body > .container-fluid > .row-fluid > .span12 {
-        padding-top: 59px;
-    }
-}
-
-@media (max-width: 979px) {
-    #menu a {
-        line-height: 1.5em;
-    }
-    body > .container-fluid > .row-fluid > .span12 {
-        padding-top: 53px;
-    }
+.space{
+    display:block;
+    height: 50px;
 }
