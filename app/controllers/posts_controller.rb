@@ -61,8 +61,12 @@ class PostsController < ApplicationController
       end
     end
 
-    @user = current_user
-    UserMailer.send_blackboard_notification(@post,@user).deliver
+    users = User.all
+    users.each do |u|
+        if u.email == 'katharina.gruber1@gmail.com'
+          UserMailer.send_blackboard_notification(@post,u).deliver
+        end
+    end
   end
 
   # PUT /posts/1
