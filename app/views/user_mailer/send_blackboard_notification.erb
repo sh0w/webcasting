@@ -9,8 +9,8 @@
 
     <blockquote style="font-size: 16px; line-height: 24px; background-color: #ffffff; margin: 30px auto; max-width: 600px;">
 
-        <h1>Hello <%= @user.name %>!</h1>
-        <p>There is a new entry on COACT'S <%= link_to "blackboard", black_board_path %>:</p>
+        <h1>Hey <%= @user.name %>!</h1>
+        <p>There is a new entry on COACT'S <%= link_to "blackboard", black_board_path, {:style => 'color: #8DAAB4'} %>:</p>
 
         <p>"<%= @post.title %>"</p>
         <p>Maybe you wanna check it out :)</p>
