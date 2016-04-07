@@ -63,9 +63,7 @@ class PostsController < ApplicationController
 
     users = User.all
     users.each do |u|
-        if u.email == 'katharina.gruber1@gmail.com'
-          UserMailer.send_blackboard_notification(@post,u).deliver
-        end
+        UserMailer.send_blackboard_notification(@post,u).deliver
     end
   end
 
