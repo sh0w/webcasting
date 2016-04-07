@@ -61,7 +61,8 @@ class PostsController < ApplicationController
       end
     end
 
-    #UserMailer.send_blackboard_notification(@post).deliver
+    @user = current_user
+    UserMailer.send_blackboard_notification(@post,@user).deliver
   end
 
   # PUT /posts/1
