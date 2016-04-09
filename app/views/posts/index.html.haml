@@ -7,7 +7,7 @@
 
   - @posts.each do |post|
     %article.post{:class => @colors.sample}
-      - if post.user.id == current_user.id #|| current_user.admin?
+      - if post.user.id == current_user.id || current_user.admin?
         =link_to "", post, method: :delete, :confirm => 'Are you sure?', :class => 'delete-i'
         =link_to "", edit_post_path(post), remote:true, :class => 'edit_post edit-i'
       .post-container
